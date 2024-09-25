@@ -1,11 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRedditAlien } from '@fortawesome/free-brands-svg-icons';
+import { ResumeProvider } from './contexts/ResumeContext';
+import CurriculumVitae from './views/CurriculumVitae';
 
 export function App() {
   return (
-    <>
-      <FontAwesomeIcon icon={faRedditAlien} size="3x" />
-      <h1 className="text-5xl inline">Hello world!</h1>
-    </>
+    <ResumeProvider>
+      <CurriculumVitae />
+    </ResumeProvider>
   );
 }

@@ -15,8 +15,6 @@ export type Resume = {
   meta?: ResumeMeta;
 };
 
-export type ResumeDate = `${number}-${number}-${number}`;
-
 export type ResumeBasics = {
   name: string;
   label: string;
@@ -47,8 +45,8 @@ export type ResumeWork = {
   name: string;
   position: string;
   url: string;
-  startDate: ResumeDate;
-  endDate: ResumeDate;
+  startDate: string;
+  endDate: string;
   summary: string;
   highlights: string[];
 };
@@ -57,8 +55,8 @@ export type ResumeVolunteer = {
   organization: string;
   position: string;
   url: string;
-  startDate: ResumeDate;
-  endDate: ResumeDate;
+  startDate: string;
+  endDate: string;
   summary: string;
   highlights: string[];
 };
@@ -68,22 +66,22 @@ export type ResumeEducation = {
   url: string;
   area: string;
   studyType: string;
-  startDate: ResumeDate;
-  endDate: ResumeDate;
+  startDate: string;
+  endDate: string;
   score: string;
   courses: string[];
 };
 
 export type ResumeAward = {
   title: string;
-  date: ResumeDate;
+  date: string;
   awarder: string;
   summary: string;
 };
 
 export type ResumeCertificate = {
   name: string;
-  date: ResumeDate;
+  date: string;
   issuer: string;
   url: string;
 };
@@ -91,7 +89,7 @@ export type ResumeCertificate = {
 export type ResumePublication = {
   name: string;
   publisher: string;
-  releaseDate: ResumeDate;
+  releaseDate: string;
   url: string;
   summary: string;
 };
@@ -119,8 +117,8 @@ export type ResumeReference = {
 
 export type ResumeProject = {
   name: string;
-  startDate: ResumeDate;
-  endDate: ResumeDate;
+  startDate: string;
+  endDate: string;
   description: string;
   highlights: string[];
   url: string;
