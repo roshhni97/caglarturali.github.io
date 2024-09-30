@@ -1,20 +1,23 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+import { fontFamily, screens } from 'tailwindcss/defaultTheme';
+
+// Max-out at lg.
+const customScreens = Object.assign({}, screens);
+delete customScreens.xl;
+delete customScreens['2xl'];
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     fontFamily: {
-      sans: ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
-      serif: ['"IBM Plex Serif"', ...defaultTheme.fontFamily.serif],
-      mono: ['"IBM Plex Mono"', ...defaultTheme.fontFamily.mono],
+      sans: ['"IBM Plex Sans"', ...fontFamily.sans],
+      serif: ['"IBM Plex Serif"', ...fontFamily.serif],
+      mono: ['"IBM Plex Mono"', ...fontFamily.mono],
     },
+    screens: customScreens,
     extend: {
       fontFamily: {
-        'sans-narrow': [
-          '"IBM Plex Sans Condensed"',
-          ...defaultTheme.fontFamily.sans,
-        ],
+        'sans-narrow': ['"IBM Plex Sans Condensed"', ...fontFamily.sans],
       },
     },
   },
