@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-a:hover {
-  @apply border-b-[1px] border-dashed;
+@layer base {
+  a:hover {
+    @apply border-b border-dashed border-gray-900 dark:border-gray-100;
+  }
 }

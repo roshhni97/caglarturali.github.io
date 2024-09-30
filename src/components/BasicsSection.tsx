@@ -19,6 +19,7 @@ export default function BasicsSection() {
       text: phone,
       href: `tel:${phone}`,
       icon: faPhone,
+      classes: 'blur-sm hover:blur-none print:blur-none transition',
     },
     {
       text: email,
@@ -37,29 +38,44 @@ export default function BasicsSection() {
     },
   ];
 
+  function softClick(href: string) {
+    const el = document.createElement('a');
+    el.href = href;
+    el.click();
+    el.remove();
+  }
+
   return (
-    <div className="flex lg:flex-row flex-col border-b-2 border-gray-400 py-6">
-      <div className="lg:w-[200px] w-auto flex justify-center">
+    <section className="flex flex-row">
+      <div className="w-60 flex justify-center">
         <img
-          src={image || 'https://placehold.co/400'}
+          src={image || 'https://placehold.co/200'}
           alt="profile picture"
           className="w-28 h-28 rounded-full"
         />
       </div>
-      <div className="lg:flex-grow w-auto flex lg:flex-row flex-col lg:justify-between lg:items-end">
-        <div className="lg:p-0 py-4">
+      <div className="w-full flex flex-row justify-between items-end">
+        <div className="">
           <h1 className="font-sans-narrow text-4xl pb-2">{name}</h1>
           <h2 className="font-mono font-light text-2xl">{label}</h2>
         </div>
-        <div className="font-light text-sm lg:text-right">
-          {contactInfo.map(({ href, text, icon }) => (
-            <p key={href} className="mt-2">
-              <a href={href}>{text}</a>
-              <FontAwesomeIcon icon={icon} className="pl-2" />
-            </p>
-          ))}
+        <div className="font-light text-sm text-right">
+          <ul>
+            {contactInfo.map(({ href, text, icon, classes }) => (
+              <li key={href} className="mt-2">
+                <a
+                  href="#"
+                  className={`${classes} select-none`}
+                  onClick={() => softClick(href)}
+                >
+                  {text}
+                </a>
+                <FontAwesomeIcon icon={icon} className="pl-2" />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
