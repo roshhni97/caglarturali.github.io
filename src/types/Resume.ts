@@ -1,17 +1,17 @@
 export type Resume = {
   $schema: string;
   basics: ResumeBasics;
-  work?: ResumeWork[];
-  volunteer?: ResumeVolunteer[];
-  education?: ResumeEducation[];
-  awards?: ResumeAward[];
-  certificates?: ResumeCertificate[];
-  publications?: ResumePublication[];
-  skills?: ResumeSkill[];
-  languages?: ResumeLanguage[];
-  interests?: ResumeInterest[];
-  references?: ResumeReference[];
-  projects?: ResumeProject[];
+  work: ResumeWork[];
+  volunteer: ResumeVolunteer[];
+  education: ResumeEducation[];
+  awards: ResumeAward[];
+  certificates: ResumeCertificate[];
+  publications: ResumePublication[];
+  skills: ResumeSkill[];
+  languages: ResumeLanguage[];
+  interests: ResumeInterest[];
+  references: ResumeReference[];
+  projects: ResumeProject[];
   meta?: ResumeMeta;
 };
 
