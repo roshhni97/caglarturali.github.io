@@ -38,21 +38,21 @@ export default function ListItemWidget({
 
   return (
     <div className={`py-3 ${className}`}>
-      <div className="flex items-center">
-        <div className="w-8">
+      <div className="flex items-start">
+        <div className="pt-2 pe-2">
           <FontAwesomeIcon icon={icon} size="2x" opacity={0.8} />
         </div>
         <div className="flex-grow">
-          <p className="">{title}</p>
-          <div className="flex justify-between items-end">
-            <div className="font-medium">{subtitles.map(renderSubtitle)}</div>
-            <div className="font-light">
-              {textRight && <p className="text-sm italic">{textRight}</p>}
-            </div>
+          <div className="flex justify-between">
+            <p className="">{title}</p>
+            {textRight && (
+              <p className="font-light text-sm italic">{textRight}</p>
+            )}
           </div>
+          <div className="font-medium">{subtitles.map(renderSubtitle)}</div>
+          {children && <div className="pt-2 space-y-2 text-sm">{children}</div>}
         </div>
       </div>
-      {children && <div className="pt-2 space-y-2 text-sm">{children}</div>}
     </div>
   );
 }

@@ -9,6 +9,8 @@ type Props = PropsWithChildren<{
 }>;
 
 export default function SimpleListWidget({ title, items, className }: Props) {
+  if (items.length == 0) return null;
+
   return (
     <div className={className}>
       <p>{title}:</p>

@@ -1,4 +1,5 @@
 import BasicsSection from 'src/components/BasicsSection';
+import EducationSection from 'src/components/EducationSection';
 import ProfilesSection from 'src/components/ProfilesSection';
 import SummarySection from 'src/components/SummarySection';
 import WorkSection from 'src/components/WorkSection';
@@ -17,6 +18,7 @@ export default function CurriculumVitae() {
           <div className="w-full space-y-8">
             <SummarySection />
             <WorkSection />
+            <EducationSection />
           </div>
         </div>
       </main>
