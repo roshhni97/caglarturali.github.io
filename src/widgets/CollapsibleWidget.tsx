@@ -13,9 +13,9 @@ export default function CollapsibleWidget({
   return (
     <details
       open={open}
-      className="border-b border-dashed border-gray-400 pb-2"
+      className="border-b border-dashed border-gray-500/50 pb-3"
     >
-      <summary className="font-sans-narrow font-light uppercase cursor-pointer select-none">
+      <summary className="font-sans-narrow font-light uppercase text-sm opacity-75 cursor-pointer select-none">
         {title}
       </summary>
       <div>{children}</div>

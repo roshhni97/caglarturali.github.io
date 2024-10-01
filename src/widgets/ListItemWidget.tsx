@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 
-export type ListItemWidgetSubtitle =
+export type ListItemWidgetTitle =
   | string
   | {
       text: string;
@@ -10,8 +10,8 @@ export type ListItemWidgetSubtitle =
     };
 
 export type ListItemWidgetProps = PropsWithChildren<{
-  title: string;
-  subtitles: ListItemWidgetSubtitle[];
+  title: ListItemWidgetTitle;
+  subtitles: ListItemWidgetTitle[];
   icon: IconProp;
   textRight?: string;
   className?: string | undefined;
@@ -25,31 +25,33 @@ export default function ListItemWidget({
   className,
   children,
 }: ListItemWidgetProps) {
-  function renderSubtitle(subtitle: ListItemWidgetSubtitle) {
-    if (typeof subtitle == 'string') {
-      return <p>{subtitle}</p>;
+  function renderTitle(title: ListItemWidgetTitle) {
+    if (typeof title == 'string') {
+      return <p>{title}</p>;
     }
     return (
       <p>
-        <a href={subtitle.href}>{subtitle.text}</a>
+        <a href={title.href}>{title.text}</a>
       </p>
     );
   }
 
   return (
-    <div className={`py-3 ${className}`}>
+    <div className={`pt-4 ${className}`}>
       <div className="flex items-start">
         <div className="pt-2 pe-3">
-          <FontAwesomeIcon icon={icon} size="2x" opacity={0.8} />
+          <FontAwesomeIcon icon={icon} size="2x" opacity={0.75} />
         </div>
         <div className="w-full">
           <div className="flex justify-between">
-            <p className="">{title}</p>
+            <div className="">{renderTitle(title)}</div>
             {textRight && (
-              <p className="font-light text-sm italic">{textRight}</p>
+              <p className="font-light text-sm italic opacity-90">
+                {textRight}
+              </p>
             )}
           </div>
-          <div className="font-medium">{subtitles.map(renderSubtitle)}</div>
+          <div className="font-medium">{subtitles.map(renderTitle)}</div>
           {children && <div className="pt-2 space-y-2 text-sm">{children}</div>}
         </div>
       </div>
