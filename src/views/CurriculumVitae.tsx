@@ -1,3 +1,4 @@
+import AwardsSection from 'src/components/AwardsSection';
 import BasicsSection from 'src/components/BasicsSection';
 import EducationSection from 'src/components/EducationSection';
 import ProfilesSection from 'src/components/ProfilesSection';
@@ -21,6 +22,7 @@ export default function CurriculumVitae() {
             <WorkSection />
             <EducationSection />
             <VolunteerSection />
+            <AwardsSection />
           </div>
         </div>
       </main>

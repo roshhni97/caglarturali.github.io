@@ -9,7 +9,7 @@ export type SimpleListWidgetProps = {
 
 export default function SimpleListWidget({
   title,
-  items,
+  items = [],
   className,
 }: SimpleListWidgetProps) {
   if (items.length == 0) return null;

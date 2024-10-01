@@ -39,10 +39,10 @@ export default function ListItemWidget({
   return (
     <div className={`py-3 ${className}`}>
       <div className="flex items-start">
-        <div className="pt-2 pe-2">
+        <div className="pt-2 pe-3">
           <FontAwesomeIcon icon={icon} size="2x" opacity={0.8} />
         </div>
-        <div className="flex-grow">
+        <div className="w-full">
           <div className="flex justify-between">
             <p className="">{title}</p>
             {textRight && (
