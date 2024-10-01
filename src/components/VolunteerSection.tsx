@@ -1,22 +1,22 @@
 import { useContext } from 'react';
-import { faBuildingUser } from '@fortawesome/free-solid-svg-icons';
+import { faPeopleRoof } from '@fortawesome/free-solid-svg-icons';
 import { ResumeContext } from 'src/contexts/ResumeContext';
 import { formatDateRange } from 'src/utils/date';
 import PrimarySectionWidget from 'src/widgets/PrimarySectionWidget';
 import type { PrimarySectionWidgetProps } from 'src/widgets/PrimarySectionWidget';
 
-export default function WorkSection() {
-  const { work } = useContext(ResumeContext);
+export default function VolunteerSection() {
+  const { volunteer } = useContext(ResumeContext);
 
   const data: PrimarySectionWidgetProps = {
-    title: 'Experience',
-    items: work.map(
-      ({ position, name, url, summary, highlights, ...dates }) => {
+    title: 'Volunteer',
+    items: volunteer.map(
+      ({ position, organization, url, summary, highlights, ...dates }) => {
         return {
           title: position,
-          subtitles: [{ text: name, href: url }],
+          subtitles: [{ text: organization, href: url }],
           textRight: formatDateRange(dates.startDate, dates.endDate),
-          icon: faBuildingUser,
+          icon: faPeopleRoof,
           content: summary,
           sublist: {
             title: 'Highlights',

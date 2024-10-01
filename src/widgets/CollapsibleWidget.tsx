@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 
-type Props = PropsWithChildren<{
+export type CollapsibleWidgetProps = PropsWithChildren<{
   title: string;
   open?: boolean;
 }>;
@@ -9,7 +9,7 @@ export default function CollapsibleWidget({
   open = true,
   title,
   children,
-}: Props) {
+}: CollapsibleWidgetProps) {
   return (
     <details
       open={open}
@@ -18,7 +18,7 @@ export default function CollapsibleWidget({
       <summary className="font-sans-narrow font-light uppercase cursor-pointer select-none">
         {title}
       </summary>
-      {children}
+      <div>{children}</div>
     </details>
   );
 }

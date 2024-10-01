@@ -2,16 +2,16 @@ import { PropsWithChildren } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 
-type Subtitle =
+export type ListItemWidgetSubtitle =
   | string
   | {
       text: string;
       href: string;
     };
 
-type Props = PropsWithChildren<{
+export type ListItemWidgetProps = PropsWithChildren<{
   title: string;
-  subtitles: Subtitle[];
+  subtitles: ListItemWidgetSubtitle[];
   icon: IconProp;
   textRight?: string;
   className?: string | undefined;
@@ -24,8 +24,8 @@ export default function ListItemWidget({
   textRight,
   className,
   children,
-}: Props) {
-  function renderSubtitle(subtitle: Subtitle) {
+}: ListItemWidgetProps) {
+  function renderSubtitle(subtitle: ListItemWidgetSubtitle) {
     if (typeof subtitle == 'string') {
       return <p>{subtitle}</p>;
     }

@@ -2,6 +2,7 @@ import BasicsSection from 'src/components/BasicsSection';
 import EducationSection from 'src/components/EducationSection';
 import ProfilesSection from 'src/components/ProfilesSection';
 import SummarySection from 'src/components/SummarySection';
+import VolunteerSection from 'src/components/VolunteerSection';
 import WorkSection from 'src/components/WorkSection';
 
 export default function CurriculumVitae() {
@@ -15,10 +16,11 @@ export default function CurriculumVitae() {
           <aside className="w-60 font-light">
             <ProfilesSection />
           </aside>
-          <div className="w-full space-y-8">
+          <div className="w-full space-y-10">
             <SummarySection />
             <WorkSection />
             <EducationSection />
+            <VolunteerSection />
           </div>
         </div>
       </main>
