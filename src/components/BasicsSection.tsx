@@ -6,7 +6,7 @@ import {
   faMapMarker,
   faPhone,
 } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import IconLinkWidget from 'src/widgets/IconLinkWidget';
 
 export default function BasicsSection() {
   const {
@@ -19,7 +19,6 @@ export default function BasicsSection() {
       text: phone,
       href: `tel:${phone}`,
       icon: faPhone,
-      classes: 'blur-sm hover:blur-none print:blur-none transition',
     },
     {
       text: email,
@@ -38,13 +37,6 @@ export default function BasicsSection() {
     },
   ];
 
-  function softClick(href: string) {
-    const el = document.createElement('a');
-    el.href = href;
-    el.click();
-    el.remove();
-  }
-
   return (
     <section className="flex flex-row">
       <div className="flex w-60 justify-center">
@@ -61,16 +53,14 @@ export default function BasicsSection() {
         </div>
         <div className="text-right text-sm font-light">
           <ul>
-            {contactInfo.map(({ href, text, icon, classes }) => (
-              <li key={href} className="mt-2">
-                <a
-                  href="#"
-                  className={`${classes} select-none`}
-                  onClick={() => softClick(href)}
-                >
-                  {text}
-                </a>
-                <FontAwesomeIcon icon={icon} className="pl-2" />
+            {contactInfo.map(({ href, text, icon }) => (
+              <li key={href} className="mt-1.5">
+                <IconLinkWidget
+                  text={text}
+                  href={href}
+                  icon={icon}
+                  iconPosition="after"
+                />
               </li>
             ))}
           </ul>

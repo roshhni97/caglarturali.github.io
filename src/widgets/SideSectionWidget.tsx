@@ -28,7 +28,7 @@ export default function SideSectionWidget({
           <div key={title} className="pb-4">
             <p>{title}</p>
             {subtitle && <p className="italic">{subtitle}</p>}
-            <KeywordsWidget {...keywords} className="gap-2 pt-1" />
+            <KeywordsWidget {...keywords} className="gap-1.5 pt-1" />
           </div>
         ))}
       </div>
