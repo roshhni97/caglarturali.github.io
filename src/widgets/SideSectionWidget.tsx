@@ -19,7 +19,7 @@ export default function SideSectionWidget({
   return (
     <section>
       <div>
-        <span className="border-b border-dashed font-sans-narrow font-medium opacity-75">
+        <span className="cursor-default border-b border-dashed font-sans-narrow font-medium opacity-75">
           {title}
         </span>
       </div>
@@ -28,7 +28,7 @@ export default function SideSectionWidget({
           <div key={title} className="pb-4">
             <p>{title}</p>
             {subtitle && <p className="italic">{subtitle}</p>}
-            <KeywordsWidget {...keywords} className="gap-1.5 pt-1" />
+            <KeywordsWidget {...keywords} gap={1.5} className="pt-1" />
           </div>
         ))}
       </div>

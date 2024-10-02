@@ -34,7 +34,7 @@ export default function PrimarySectionWidget({
               <ListItemWidget {...item}>
                 {content && <div>{content}</div>}
                 <SimpleListWidget {...sublist} />
-                <KeywordsWidget {...keywords} className="pt-2" />
+                <KeywordsWidget {...keywords} gap={4} className="pt-2" />
               </ListItemWidget>
             </li>
           ))}

@@ -1,12 +1,14 @@
 export type KeywordsWidgetProps = {
   items: string[];
   search: 'github' | 'google';
+  gap?: number;
   className?: string | undefined;
 };
 
 export default function KeywordsWidget({
   items = [],
   search,
+  gap = 2,
   className,
 }: KeywordsWidgetProps) {
   if (items.length == 0) return null;
@@ -16,7 +18,7 @@ export default function KeywordsWidget({
   }
 
   return (
-    <div className={`flex flex-wrap gap-4 text-xs ${className}`}>
+    <div className={`flex flex-wrap text-xs gap-${gap} ${className}`}>
       {items.map((item) => (
         <div key={item.replaceAll(' ', '_')}>
           <a href={prepareSearchUrl(item)} className="opacity-80">
