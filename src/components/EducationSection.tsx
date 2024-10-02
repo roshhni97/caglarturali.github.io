@@ -26,7 +26,7 @@ export default function EducationSection() {
           textRight: formatDateRange(dates.startDate, dates.endDate),
           icon: faGraduationCap,
           sublist: {
-            title: 'Courses',
+            title: 'Notable Courses',
             items: courses,
           },
         };

@@ -16,11 +16,11 @@ export default function SimpleListWidget({
 
   return (
     <div className={className}>
-      <p>{title}:</p>
+      <p className="opacity-80">{title}:</p>
       <ul>
         {items.map((item) => (
           <li key={item.replaceAll(' ', '_')}>
-            <FontAwesomeIcon icon={faCheck} className="me-2" />
+            <FontAwesomeIcon icon={faCheck} className="me-2" opacity={0.8} />
             <span>{item}</span>
           </li>
         ))}
