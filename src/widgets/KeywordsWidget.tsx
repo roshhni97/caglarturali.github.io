@@ -16,13 +16,13 @@ export default function KeywordsWidget({
   }
 
   return (
-    <div className={`flex gap-4 text-xs ${className}`}>
+    <div className={`flex flex-wrap gap-4 text-xs ${className}`}>
       {items.map((item) => (
-        <p key={item.replaceAll(' ', '_')}>
-          <a href={prepareSearchUrl(item)} className="font-medium opacity-75">
+        <div key={item.replaceAll(' ', '_')}>
+          <a href={prepareSearchUrl(item)} className="opacity-80">
             #{item}
           </a>
-        </p>
+        </div>
       ))}
     </div>
   );

@@ -4,6 +4,7 @@ import EducationSection from 'src/components/EducationSection';
 import ProfilesSection from 'src/components/ProfilesSection';
 import ProjectsSection from 'src/components/ProjectsSection';
 import PublicationsSection from 'src/components/PublicationsSection';
+import SkillsSection from 'src/components/SkillsSection';
 import SummarySection from 'src/components/SummarySection';
 import VolunteerSection from 'src/components/VolunteerSection';
 import WorkSection from 'src/components/WorkSection';
@@ -16,8 +17,9 @@ export default function CurriculumVitae() {
           <BasicsSection />
         </div>
         <div className="flex flex-row py-6">
-          <aside className="w-60 font-light">
+          <aside className="w-60 space-y-8 text-sm font-light">
             <ProfilesSection />
+            <SkillsSection />
           </aside>
           <div className="w-full space-y-10">
             <SummarySection />
