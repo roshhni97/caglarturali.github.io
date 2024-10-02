@@ -8,6 +8,9 @@ export function formatDate(dateString: string): string {
 }
 
 export function formatDateRange(startDate: string, endDate: string): string {
+  if (startDate == endDate) {
+    return formatDate(startDate);
+  }
   return [
     formatDate(startDate),
     endDate != '' ? formatDate(endDate) : 'Present',

@@ -46,13 +46,13 @@ export default function ListItemWidget({
           <div className="flex justify-between">
             <div className="">{renderTitle(title)}</div>
             {textRight && (
-              <p className="font-light text-sm italic opacity-90">
+              <p className="font-light text-sm italic opacity-85">
                 {textRight}
               </p>
             )}
           </div>
           <div className="font-medium">{subtitles.map(renderTitle)}</div>
-          {children && <div className="pt-2 space-y-2 text-sm">{children}</div>}
+          {children && <div className="pt-1 space-y-2 text-sm">{children}</div>}
         </div>
       </div>
     </div>

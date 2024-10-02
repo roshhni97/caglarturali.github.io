@@ -122,6 +122,10 @@ export type ResumeProject = {
   description: string;
   highlights: string[];
   url: string;
+  keywords: string[];
+  roles: string[];
+  entity: string;
+  type: string;
 };
 
 export type ResumeMeta = {

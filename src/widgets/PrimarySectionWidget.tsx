@@ -4,6 +4,8 @@ import ListItemWidget from 'src/widgets/ListItemWidget';
 import type { ListItemWidgetProps } from 'src/widgets/ListItemWidget';
 import SimpleListWidget from 'src/widgets/SimpleListWidget';
 import type { SimpleListWidgetProps } from 'src/widgets/SimpleListWidget';
+import KeywordsWidget from 'src/widgets/KeywordsWidget';
+import type { KeywordsWidgetProps } from 'src/widgets/KeywordsWidget';
 
 export type PrimarySectionWidgetProps = Omit<
   CollapsibleWidgetProps,
@@ -12,6 +14,7 @@ export type PrimarySectionWidgetProps = Omit<
   items: (Omit<ListItemWidgetProps, 'children'> & {
     content?: React.ReactNode | undefined;
     sublist?: SimpleListWidgetProps;
+    keywords?: KeywordsWidgetProps;
   })[];
 };
 
@@ -26,11 +29,12 @@ export default function PrimarySectionWidget({
     <section>
       <CollapsibleWidget title={title} open={open}>
         <ul>
-          {items.map(({ content, sublist, ...item }, idx) => (
+          {items.map(({ content, sublist, keywords, ...item }, idx) => (
             <li key={`${item.title}_${idx}`.replaceAll(' ', '_')}>
               <ListItemWidget {...item}>
                 {content && <div>{content}</div>}
                 <SimpleListWidget {...sublist} />
+                <KeywordsWidget {...keywords} className="pt-2" />
               </ListItemWidget>
             </li>
           ))}
