@@ -47,19 +47,19 @@ export default function BasicsSection() {
 
   return (
     <section className="flex flex-row">
-      <div className="w-60 flex justify-center">
+      <div className="flex w-60 justify-center">
         <img
           src={image || 'https://placehold.co/200'}
           alt="profile picture"
-          className="w-28 h-28 rounded-full"
+          className="h-28 w-28 rounded-full"
         />
       </div>
-      <div className="w-full flex flex-row justify-between items-end">
+      <div className="flex w-full flex-row items-end justify-between">
         <div className="">
-          <h1 className="font-sans-narrow text-4xl pb-2">{name}</h1>
-          <h2 className="font-mono font-light text-2xl">{label}</h2>
+          <h1 className="pb-2 font-sans-narrow text-4xl">{name}</h1>
+          <h2 className="font-mono text-2xl font-light">{label}</h2>
         </div>
-        <div className="font-light text-sm text-right">
+        <div className="text-right text-sm font-light">
           <ul>
             {contactInfo.map(({ href, text, icon, classes }) => (
               <li key={href} className="mt-2">

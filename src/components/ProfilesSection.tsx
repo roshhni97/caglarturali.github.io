@@ -27,7 +27,7 @@ export default function ProfilesSection() {
         {profiles.map(({ network, url, username }) => (
           <li key={url} className="pb-3">
             <a href={url}>
-              <span className="w-6 inline-block">
+              <span className="inline-block w-6">
                 <FontAwesomeIcon
                   icon={networkIconMap[network.toLowerCase()] || faUserCircle}
                 />
