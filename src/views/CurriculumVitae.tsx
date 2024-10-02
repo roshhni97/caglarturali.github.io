@@ -1,6 +1,8 @@
 import AwardsSection from 'src/components/AwardsSection';
 import BasicsSection from 'src/components/BasicsSection';
 import EducationSection from 'src/components/EducationSection';
+import InterestsSection from 'src/components/InterestsSection';
+import LanguagesSection from 'src/components/LanguagesSection';
 import ProfilesSection from 'src/components/ProfilesSection';
 import ProjectsSection from 'src/components/ProjectsSection';
 import PublicationsSection from 'src/components/PublicationsSection';
@@ -20,6 +22,8 @@ export default function CurriculumVitae() {
           <aside className="w-60 space-y-8 text-sm font-light">
             <ProfilesSection />
             <SkillsSection />
+            <LanguagesSection />
+            <InterestsSection />
           </aside>
           <div className="w-full space-y-10">
             <SummarySection />
