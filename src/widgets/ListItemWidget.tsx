@@ -27,10 +27,10 @@ export default function ListItemWidget({
 }: ListItemWidgetProps) {
   function renderTitle(title: ListItemWidgetTitle) {
     if (typeof title == 'string') {
-      return <p>{title}</p>;
+      return <p key={title}>{title}</p>;
     }
     return (
-      <p>
+      <p key={title.text}>
         <a href={title.href}>{title.text}</a>
       </p>
     );
