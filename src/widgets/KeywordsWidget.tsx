@@ -18,7 +18,10 @@ export default function KeywordsWidget({
   }
 
   return (
-    <div className={`flex flex-wrap text-xs gap-${gap} ${className}`}>
+    <div
+      className={`flex flex-wrap text-xs ${className}`}
+      style={{ gap: `${gap * 0.25}rem` }}
+    >
       {items.map((item) => (
         <div key={item.replaceAll(' ', '_')}>
           <a href={prepareSearchUrl(item)} className="opacity-80">
