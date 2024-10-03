@@ -19,7 +19,7 @@ export default function SideSectionWidget({
   return (
     <section>
       <div>
-        <span className="cursor-default border-b border-dashed font-sans-narrow font-medium opacity-75">
+        <span className="cursor-default border-b border-dashed border-current font-sans-narrow font-medium opacity-75">
           {title}
         </span>
       </div>
