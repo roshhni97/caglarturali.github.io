@@ -11,16 +11,16 @@ export type ListItemWidgetTitle =
 
 export type ListItemWidgetProps = PropsWithChildren<{
   title: ListItemWidgetTitle;
-  subtitles: ListItemWidgetTitle[];
   icon: IconProp;
+  subtitles?: ListItemWidgetTitle[];
   textRight?: string;
   className?: string | undefined;
 }>;
 
 export default function ListItemWidget({
   title,
-  subtitles,
   icon,
+  subtitles,
   textRight,
   className,
   children,
@@ -51,9 +51,11 @@ export default function ListItemWidget({
               </p>
             )}
           </div>
-          <div className="text-sm font-medium">
-            {subtitles.map(renderTitle)}
-          </div>
+          {subtitles && (
+            <div className="text-sm font-medium">
+              {subtitles.map(renderTitle)}
+            </div>
+          )}
           {children && <div className="space-y-2 pt-1 text-sm">{children}</div>}
         </div>
       </div>
