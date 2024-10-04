@@ -7,7 +7,7 @@ delete customScreens['2xl'];
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{ts,tsx}'],
+  content: ['./src/**/*.{ts,tsx}', './public/*.html'],
   theme: {
     fontFamily: {
       sans: ['"IBM Plex Sans"', ...fontFamily.sans],

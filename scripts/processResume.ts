@@ -26,4 +26,4 @@ async function getTTS(outputPath: string) {
   await writeFile(outputPath, buffer);
 }
 
-await getTTS('public/tts.mp3');
+await getTTS('data/tts.mp3');
