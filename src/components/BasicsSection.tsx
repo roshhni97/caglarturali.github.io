@@ -7,6 +7,7 @@ import {
   faPhone,
 } from '@fortawesome/free-solid-svg-icons';
 import IconLinkWidget from 'src/widgets/IconLinkWidget';
+import AudioPlayerWidget from 'src/widgets/AudioPlayerWidget';
 
 export default function BasicsSection() {
   const {
@@ -48,7 +49,12 @@ export default function BasicsSection() {
       </div>
       <div className="flex w-full flex-row items-end justify-between">
         <div className="">
-          <h1 className="pb-2 font-sans-narrow text-4xl">{name}</h1>
+          <h1 className="pb-2 font-sans-narrow text-4xl">
+            <span>{name}</span>
+            <span className="ps-3 text-2xl">
+              <AudioPlayerWidget src="tts.mp3" />
+            </span>
+          </h1>
           <h2 className="font-mono text-2xl font-light">{label}</h2>
         </div>
         <div className="text-right text-sm font-light">
