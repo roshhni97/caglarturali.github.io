@@ -39,25 +39,25 @@ export default function BasicsSection() {
   ];
 
   return (
-    <section className="flex flex-row">
-      <div className="flex w-60 justify-center">
+    <section className="flex flex-col lg:flex-row">
+      <div className="flex w-full justify-center py-2 lg:w-60 lg:py-0">
         <img
           src={image || 'https://placehold.co/200'}
           alt="profile picture"
           className="h-28 w-28 rounded-full"
         />
       </div>
-      <div className="flex w-full flex-row items-end justify-between">
-        <div className="">
-          <h1 className="pb-2 font-sans-narrow text-4xl">
+      <div className="flex w-full flex-col lg:flex-row lg:items-end lg:justify-between">
+        <div className="py-4 lg:py-0">
+          <h1 className="pb-1 font-sans-narrow text-4xl lg:pb-2">
             <span>{name}</span>
-            <span className="ps-3 text-2xl">
+            <span className="text-2xl">
               <AudioPlayerWidget src="tts.mp3" />
             </span>
           </h1>
           <h2 className="font-mono text-2xl font-light">{label}</h2>
         </div>
-        <div className="text-right text-sm font-light">
+        <div className="text-sm font-light lg:text-right">
           <ul>
             {contactInfo.map(({ href, text, icon }) => (
               <li key={href} className="mt-1.5">

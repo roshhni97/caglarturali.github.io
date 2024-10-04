@@ -16,8 +16,8 @@ import WorkSection from 'src/components/WorkSection';
 export default function CurriculumVitae() {
   return (
     <div className="min-h-screen w-full">
-      <main className="container mx-auto pb-60">
-        <div className="border-b-2 border-dashed border-gray-400 py-8">
+      <main className="container mx-auto px-6 pb-60 lg:px-0">
+        <div className="border-b-2 border-dashed border-gray-400 py-6 lg:py-8">
           <BasicsSection />
         </div>
         <div className="flex flex-row pt-6">
