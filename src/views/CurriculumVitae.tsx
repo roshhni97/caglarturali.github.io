@@ -20,8 +20,8 @@ export default function CurriculumVitae() {
         <div className="border-b-2 border-dashed border-gray-400 py-6 lg:py-8">
           <BasicsSection />
         </div>
-        <div className="flex flex-row pt-6">
-          <aside className="w-60 space-y-8 text-sm font-light">
+        <div className="flex flex-col pt-6 lg:flex-row">
+          <aside className="hidden w-full space-y-8 font-light lg:block lg:w-60 lg:text-sm">
             <ProfilesSection />
             <SkillsSection />
             <LanguagesSection />

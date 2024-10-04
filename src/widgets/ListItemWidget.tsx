@@ -39,24 +39,28 @@ export default function ListItemWidget({
   return (
     <div className={`pt-4 ${className}`}>
       <div className="flex items-start">
-        <div className="pe-3 pt-2">
-          <FontAwesomeIcon icon={icon} size="2x" opacity={0.75} />
+        <div className="pe-3 pt-1 text-2xl lg:pt-2 lg:text-3xl">
+          <FontAwesomeIcon icon={icon} opacity={0.75} />
         </div>
         <div className="w-full">
-          <div className="flex justify-between">
-            <div className="">{renderTitle(title)}</div>
+          <div className="flex flex-col lg:flex-row lg:justify-between">
+            <div>
+              <div className="">{renderTitle(title)}</div>
+              {subtitles && (
+                <div className="text-sm font-medium">
+                  {subtitles.map(renderTitle)}
+                </div>
+              )}
+            </div>
             {textRight && (
-              <p className="text-xs font-light italic opacity-85">
+              <p className="pb-2 pt-1 text-xs font-light italic opacity-85 lg:pb-0">
                 {textRight}
               </p>
             )}
           </div>
-          {subtitles && (
-            <div className="text-sm font-medium">
-              {subtitles.map(renderTitle)}
-            </div>
+          {children && (
+            <div className="space-y-2 pt-1 text-sm lg:pt-2">{children}</div>
           )}
-          {children && <div className="space-y-2 pt-1 text-sm">{children}</div>}
         </div>
       </div>
     </div>

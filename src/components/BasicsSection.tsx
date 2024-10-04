@@ -49,13 +49,13 @@ export default function BasicsSection() {
       </div>
       <div className="flex w-full flex-col lg:flex-row lg:items-end lg:justify-between">
         <div className="py-4 lg:py-0">
-          <h1 className="pb-1 font-sans-narrow text-4xl lg:pb-2">
+          <h1 className="pb-1 font-sans-narrow text-3xl lg:pb-2 lg:text-4xl">
             <span>{name}</span>
             <span className="text-2xl">
               <AudioPlayerWidget src="tts.mp3" />
             </span>
           </h1>
-          <h2 className="font-mono text-2xl font-light">{label}</h2>
+          <h2 className="font-mono text-xl font-light lg:text-2xl">{label}</h2>
         </div>
         <div className="text-sm font-light lg:text-right">
           <ul>
