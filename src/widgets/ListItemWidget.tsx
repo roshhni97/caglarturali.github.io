@@ -39,7 +39,7 @@ export default function ListItemWidget({
   return (
     <div className={`pt-4 ${className}`}>
       <div className="flex items-start">
-        <div className="pe-3 pt-1 text-2xl lg:pt-2 lg:text-3xl">
+        <div className="pe-2 pt-1 text-2xl lg:pe-3 lg:text-3xl">
           <FontAwesomeIcon icon={icon} opacity={0.75} />
         </div>
         <div className="w-full">
