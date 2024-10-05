@@ -9,7 +9,7 @@ async function fetchResumeData(): Promise<Resume> {
   return response.json();
 }
 
-export function useResumeData() {
+export default function useResumeData() {
   return useSuspenseQuery({
     queryKey: ['resumeData'],
     queryFn: fetchResumeData,

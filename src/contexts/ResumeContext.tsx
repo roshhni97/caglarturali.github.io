@@ -1,5 +1,5 @@
 import { createContext, PropsWithChildren } from 'react';
-import { useResumeData } from 'src/hooks/useResumeData';
+import useResumeData from 'src/hooks/useResumeData';
 import type { Resume } from 'src/types/Resume';
 
 export const ResumeContext = createContext<Resume | undefined>(undefined);
