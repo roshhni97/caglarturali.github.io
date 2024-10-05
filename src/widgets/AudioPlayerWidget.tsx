@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
+import {
+  faPauseCircle,
+  faPlayCircle,
+} from '@fortawesome/free-regular-svg-icons';
 
 export type AudioPlayerWidgetProps = {
   src: string;
@@ -9,7 +12,7 @@ export type AudioPlayerWidgetProps = {
 export default function AudioPlayerWidget({ src }: AudioPlayerWidgetProps) {
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const icon = playing ? faPause : faPlay;
+  const icon = playing ? faPauseCircle : faPlayCircle;
 
   useEffect(() => {
     const handleAudioEnd = () => setPlaying(false);
@@ -39,7 +42,7 @@ export default function AudioPlayerWidget({ src }: AudioPlayerWidgetProps) {
   return (
     <button
       onClick={togglePlay}
-      className="px-3 opacity-80 hover:opacity-100 print:invisible"
+      className="px-3 opacity-60 hover:opacity-80 print:invisible"
     >
       <FontAwesomeIcon icon={icon} />
     </button>

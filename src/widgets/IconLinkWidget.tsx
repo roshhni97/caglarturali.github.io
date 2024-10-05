@@ -30,7 +30,10 @@ export default function IconLinkWidget({
       className={`${flexDir} group inline-flex items-center gap-2`}
       role="link"
     >
-      <FontAwesomeIcon icon={icon} className="w-4 group-hover:opacity-80" />
+      <FontAwesomeIcon
+        icon={icon}
+        className="w-4 opacity-85 group-hover:opacity-70"
+      />
       <a
         href="#"
         className="inline-block select-none"

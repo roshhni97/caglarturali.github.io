@@ -19,9 +19,13 @@ export default function SimpleListWidget({
       <p className="opacity-80">{title}:</p>
       <ul>
         {items.map((item) => (
-          <li key={item.replaceAll(' ', '_')}>
-            <FontAwesomeIcon icon={faCheck} className="me-2" opacity={0.8} />
-            <span>{item}</span>
+          <li key={item} className="flex">
+            <FontAwesomeIcon
+              icon={faCheck}
+              className="me-1.5 pt-0.5 lg:me-2"
+              opacity={0.8}
+            />
+            <p>{item}</p>
           </li>
         ))}
       </ul>
