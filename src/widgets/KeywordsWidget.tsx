@@ -23,7 +23,7 @@ export default function KeywordsWidget({
       style={{ gap: `${gap * 0.25}rem` }}
     >
       {items.map((item) => (
-        <div key={item.replaceAll(' ', '_')}>
+        <div key={item}>
           <a href={prepareSearchUrl(item)} className="opacity-80">
             #{item}
           </a>

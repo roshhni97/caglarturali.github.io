@@ -30,7 +30,7 @@ export default function PrimarySectionWidget({
       <CollapsibleWidget title={title} open={open}>
         <ul>
           {items.map(({ content, sublist, keywords, ...item }, idx) => (
-            <li key={`${item.title}_${idx}`.replaceAll(' ', '_')}>
+            <li key={item.title + String(idx)}>
               <ListItemWidget {...item}>
                 {content && <div>{content}</div>}
                 <SimpleListWidget {...sublist} />
