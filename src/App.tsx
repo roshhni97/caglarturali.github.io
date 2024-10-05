@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ResumeProvider } from 'src/contexts/ResumeContext';
+import { MenuProvider } from 'src/contexts/MenuContext';
 import LoadingWidget from 'src/widgets/LoadingWidget';
 
 const queryClient = new QueryClient({
@@ -20,7 +21,9 @@ export function App() {
     <QueryClientProvider client={queryClient}>
       <ResumeProvider>
         <Suspense fallback={<LoadingWidget />}>
-          <CurriculumVitae />
+          <MenuProvider>
+            <CurriculumVitae />
+          </MenuProvider>
         </Suspense>
       </ResumeProvider>
     </QueryClientProvider>

@@ -40,7 +40,7 @@ export default function BasicsSection() {
 
   return (
     <section className="flex flex-col lg:flex-row">
-      <div className="flex w-full justify-center py-2 lg:w-60 lg:py-0">
+      <div className="flex w-full justify-center pb-2 pt-6 lg:w-60 lg:pb-0 lg:pt-0">
         <img
           src={image || 'https://placehold.co/200'}
           alt="profile picture"
@@ -49,7 +49,7 @@ export default function BasicsSection() {
       </div>
       <div className="flex w-full flex-col lg:flex-row lg:items-end lg:justify-between">
         <div className="py-4 lg:py-0">
-          <h1 className="pb-1 font-sans-narrow text-3xl lg:pb-2 lg:text-4xl">
+          <h1 className="pb-0 font-sans-narrow text-3xl lg:pb-2 lg:text-4xl">
             <span>{name}</span>
             <span className="text-2xl">
               <AudioPlayerWidget src="tts.mp3" />
