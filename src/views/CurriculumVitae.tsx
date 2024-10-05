@@ -15,12 +15,14 @@ import VolunteerSection from 'src/components/VolunteerSection';
 import WorkSection from 'src/components/WorkSection';
 import { MenuContext } from 'src/contexts/MenuContext';
 import MenuWidget from 'src/widgets/MenuWidget';
+import MetaTags from 'src/widgets/MetaTags';
 
 export default function CurriculumVitae() {
   const { menuStyle, restStyle } = useContext(MenuContext);
 
   return (
     <div className="min-h-screen w-full">
+      <MetaTags />
       <MenuWidget />
       <main className="container mx-auto px-6 pb-60 lg:px-0">
         <div
