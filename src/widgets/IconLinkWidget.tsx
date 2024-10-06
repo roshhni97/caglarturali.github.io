@@ -3,9 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export type IconLinkWidgetProps = {
   text: string;
-  href: string;
+  href: string | VoidFunction;
   icon: IconProp;
-  host?: string;
+  title?: string;
+  gap?: number;
+  fixedWidth?: boolean;
   iconPosition?: 'before' | 'after';
 };
 
@@ -13,12 +15,17 @@ export default function IconLinkWidget({
   text,
   href,
   icon,
-  host,
+  title,
+  gap = 2,
+  fixedWidth = true,
   iconPosition = 'before',
 }: IconLinkWidgetProps) {
   const flexDir = iconPosition == 'before' ? 'flex-row' : 'flex-row-reverse';
 
-  function softClick(href: string) {
+  function softClick(href: string | VoidFunction) {
+    if (typeof href == 'function') {
+      return href();
+    }
     const el = document.createElement('a');
     el.href = href;
     el.click();
@@ -27,17 +34,19 @@ export default function IconLinkWidget({
 
   return (
     <p
-      className={`${flexDir} group inline-flex items-center gap-2`}
+      className={`${flexDir} group inline-flex items-center`}
+      style={{ gap: `${0.25 * gap}rem` }}
       role="link"
     >
       <FontAwesomeIcon
         icon={icon}
-        className="w-4 opacity-85 group-hover:opacity-70"
+        className="opacity-85 group-hover:opacity-70"
+        style={{ width: fixedWidth && `${0.25 * 2 * gap}rem` }}
       />
       <a
         href="#"
         className="inline-block select-none"
-        title={host || text}
+        title={title || text}
         onClick={() => softClick(href)}
       >
         <span>{text}</span>

@@ -42,7 +42,7 @@ export default function AudioPlayerWidget({ src }: AudioPlayerWidgetProps) {
   return (
     <button
       onClick={togglePlay}
-      className="px-3 opacity-60 hover:opacity-80 print:invisible"
+      className="px-3 opacity-60 hover:opacity-80 print:hidden"
     >
       <FontAwesomeIcon icon={icon} />
     </button>

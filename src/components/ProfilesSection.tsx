@@ -29,7 +29,7 @@ export default function ProfilesSection() {
             <IconLinkWidget
               text={username}
               href={url}
-              host={network}
+              title={network}
               icon={networkIconMap[network.toLowerCase()] || faUserCircle}
             />
           </li>

@@ -10,7 +10,7 @@ export default function MenuWidget() {
   return (
     <button
       onClick={toggleOpen}
-      className="absolute left-4 top-4 z-50 p-2 lg:hidden"
+      className="absolute left-4 top-4 z-50 p-2 sm:hidden"
     >
       <FontAwesomeIcon icon={icon} size="2x" opacity={0.8} />
     </button>

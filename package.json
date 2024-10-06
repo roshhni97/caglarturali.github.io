@@ -1,6 +1,7 @@
 {
   "name": "caglarturali.github.io",
   "version": "1.0.0",
+  "homepage": "https://github.com/caglarturali/caglarturali.github.io",
   "source": "public/index.html",
   "scripts": {
     "init": "npm run clean && npm run copy",

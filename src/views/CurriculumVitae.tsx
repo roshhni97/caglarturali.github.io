@@ -16,6 +16,7 @@ import WorkSection from 'src/components/WorkSection';
 import { MenuContext } from 'src/contexts/MenuContext';
 import MenuWidget from 'src/widgets/MenuWidget';
 import MetaTags from 'src/widgets/MetaTags';
+import FooterSection from 'src/components/FooterSection';
 
 export default function CurriculumVitae() {
   const { menuStyle, restStyle } = useContext(MenuContext);
@@ -24,16 +25,16 @@ export default function CurriculumVitae() {
     <div className="min-h-screen w-full">
       <MetaTags />
       <MenuWidget />
-      <main className="container mx-auto px-6 pb-60 lg:px-0">
+      <main className="container mx-auto px-6 pb-60 sm:px-0">
         <div
-          className="border-b-2 border-dashed border-gray-400 py-6 lg:py-8"
+          className="border-b-2 border-dashed border-gray-400 py-6 sm:py-8"
           style={restStyle}
         >
           <BasicsSection />
         </div>
-        <div className="flex flex-col pt-6 lg:flex-row">
+        <div className="flex flex-col pt-6 sm:flex-row">
           <aside
-            className="hidden w-full space-y-8 font-light lg:block lg:w-60 lg:text-sm"
+            className="hidden w-full space-y-8 font-light sm:block sm:w-60 sm:text-sm"
             style={menuStyle}
           >
             <ProfilesSection />
@@ -51,6 +52,7 @@ export default function CurriculumVitae() {
             <PublicationsSection />
             <ProjectsSection />
             <ReferencesSection />
+            <FooterSection />
           </div>
         </div>
       </main>

@@ -16,3 +16,12 @@
     display: none;
   }
 }
+
+@layer utilities {
+  @media print {
+    body {
+      background: #ffffff !important;
+      color: #111111 !important;
+    }
+  }
+}
