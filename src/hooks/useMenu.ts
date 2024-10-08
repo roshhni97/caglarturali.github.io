@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import twConfig from '~/tailwind.config.js';
 
-const LG = Number.parseInt(twConfig.theme.screens.lg);
+const BP = Number.parseInt(twConfig.theme.screens.sm);
 
 export default function useMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth >= LG) {
+      if (window.innerWidth >= BP) {
         setIsOpen(false);
       }
     }
