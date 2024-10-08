@@ -4,20 +4,16 @@ import pkgJson from '~/package.json';
 
 export default function FooterSection() {
   return (
-    <footer className="flex justify-center gap-6 pt-4 text-sm opacity-60 sm:pt-8 print:hidden">
+    <footer className="flex justify-center gap-8 pt-4 text-sm opacity-60 sm:pt-8 print:hidden">
       <IconLinkWidget
         text="Source Code"
-        href={pkgJson.homepage}
+        target={pkgJson.homepage}
         icon={faCodeBranch}
-        fixedWidth={false}
-        gap={1}
       />
       <IconLinkWidget
         text="Print"
-        href={window.print}
+        target={window.print}
         icon={faPrint}
-        fixedWidth={false}
-        gap={1}
       />
     </footer>
   );

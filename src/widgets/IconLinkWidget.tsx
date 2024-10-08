@@ -3,52 +3,41 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export type IconLinkWidgetProps = {
   text: string;
-  href: string | VoidFunction;
+  target: string | VoidFunction;
   icon: IconProp;
+  position?: 'before' | 'after';
   title?: string;
-  gap?: number;
-  fixedWidth?: boolean;
-  iconPosition?: 'before' | 'after';
 };
 
 export default function IconLinkWidget({
   text,
-  href,
+  target,
   icon,
-  title,
-  gap = 2,
-  fixedWidth = true,
-  iconPosition = 'before',
+  position = 'before',
+  title = '',
 }: IconLinkWidgetProps) {
-  const flexDir = iconPosition == 'before' ? 'flex-row' : 'flex-row-reverse';
+  const pStyles: React.CSSProperties = {
+    flexDirection: position == 'before' ? 'row' : 'row-reverse',
+  };
 
-  function softClick(href: string | VoidFunction) {
-    if (typeof href == 'function') {
-      return href();
-    }
-    const el = document.createElement('a');
-    el.href = href;
-    el.click();
-    el.remove();
+  const linkProps = {
+    href: '#',
+    onClick: null,
+    title: title || text,
+  };
+  if (typeof target == 'function') {
+    linkProps.onClick = target;
+  } else {
+    linkProps.href = target;
   }
 
   return (
-    <p
-      className={`${flexDir} group inline-flex items-center`}
-      style={{ gap: `${0.25 * gap}rem` }}
-      role="link"
-    >
+    <p className="group inline-flex items-center" style={pStyles} role="link">
       <FontAwesomeIcon
         icon={icon}
-        className="opacity-85 group-hover:opacity-70"
-        style={{ width: fixedWidth && `${0.25 * 2 * gap}rem` }}
+        className="w-6 opacity-85 group-hover:opacity-70"
       />
-      <a
-        href="#"
-        className="inline-block select-none"
-        title={title || text}
-        onClick={() => softClick(href)}
-      >
+      <a {...linkProps} className="select-none">
         <span>{text}</span>
       </a>
     </p>

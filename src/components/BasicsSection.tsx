@@ -7,6 +7,7 @@ import {
   faPhone,
 } from '@fortawesome/free-solid-svg-icons';
 import IconLinkWidget from 'src/widgets/IconLinkWidget';
+import type { IconLinkWidgetProps } from 'src/widgets/IconLinkWidget';
 import AudioPlayerWidget from 'src/widgets/AudioPlayerWidget';
 
 export default function BasicsSection() {
@@ -15,28 +16,37 @@ export default function BasicsSection() {
   } = useContext(ResumeContext);
 
   const locationStr = `${location.city}, ${location.countryCode}`;
-  const contactInfo = [
-    {
-      text: phone,
-      href: `tel:${phone}`,
-      icon: faPhone,
-    },
+  const locationUrl = `https://maps.google.com/?q=${encodeURIComponent(locationStr)}`;
+
+  const contactItems: IconLinkWidgetProps[] = [
     {
       text: email,
-      href: `mailto:${email}`,
+      target: `mailto:${email}`,
       icon: faEnvelope,
+      position: 'after',
     },
     {
       text: url,
-      href: url,
+      target: url,
       icon: faArrowPointer,
+      position: 'after',
     },
     {
       text: locationStr,
-      href: `https://maps.google.com/?q=${encodeURIComponent(locationStr)}`,
+      target: locationUrl,
       icon: faMapMarker,
+      position: 'after',
     },
   ];
+
+  if (phone.length > 0) {
+    contactItems.unshift({
+      text: phone,
+      target: `tel:${phone}`,
+      icon: faPhone,
+      position: 'after',
+    });
+  }
 
   return (
     <section className="flex flex-col sm:flex-row">
@@ -59,14 +69,9 @@ export default function BasicsSection() {
         </div>
         <div className="text-sm font-light sm:text-right">
           <ul>
-            {contactInfo.map(({ href, text, icon }) => (
-              <li key={href} className="mt-1.5">
-                <IconLinkWidget
-                  text={text}
-                  href={href}
-                  icon={icon}
-                  iconPosition="after"
-                />
+            {contactItems.map((item) => (
+              <li key={item.text} className="pt-2 sm:pt-1.5">
+                <IconLinkWidget {...item} />
               </li>
             ))}
           </ul>

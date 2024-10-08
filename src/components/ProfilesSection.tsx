@@ -28,7 +28,7 @@ export default function ProfilesSection() {
           <li key={url} className="pb-2">
             <IconLinkWidget
               text={username}
-              href={url}
+              target={url}
               title={network}
               icon={networkIconMap[network.toLowerCase()] || faUserCircle}
             />
