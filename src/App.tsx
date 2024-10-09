@@ -1,8 +1,10 @@
 import { lazy, Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ErrorBoundary } from 'react-error-boundary';
 import { ResumeProvider } from 'src/contexts/ResumeContext';
 import { MenuProvider } from 'src/contexts/MenuContext';
-import LoadingWidget from 'src/widgets/LoadingWidget';
+import LoadingView from 'src/views/LoadingView';
+import ErrorView from 'src/views/ErrorView';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,14 +20,16 @@ const CurriculumVitae = lazy(() => import('src/views/CurriculumVitae'));
 
 export function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ResumeProvider>
-        <Suspense fallback={<LoadingWidget />}>
-          <MenuProvider>
-            <CurriculumVitae />
-          </MenuProvider>
-        </Suspense>
-      </ResumeProvider>
-    </QueryClientProvider>
+    <ErrorBoundary fallback={<ErrorView />}>
+      <Suspense fallback={<LoadingView />}>
+        <QueryClientProvider client={queryClient}>
+          <ResumeProvider>
+            <MenuProvider>
+              <CurriculumVitae />
+            </MenuProvider>
+          </ResumeProvider>
+        </QueryClientProvider>
+      </Suspense>
+    </ErrorBoundary>
   );
 }
