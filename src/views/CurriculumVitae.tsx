@@ -34,7 +34,7 @@ export default function CurriculumVitae() {
         </div>
         <div className="flex flex-col pt-6 sm:flex-row">
           <aside
-            className="hidden w-full space-y-8 font-light sm:block sm:w-60 sm:text-sm"
+            className="hidden w-full space-y-8 pe-2 font-light sm:block sm:w-60 sm:text-sm"
             style={menuStyle}
           >
             <ProfilesSection />

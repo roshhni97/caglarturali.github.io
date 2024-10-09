@@ -25,12 +25,16 @@ export default function PrimarySectionWidget({
 }: PrimarySectionWidgetProps) {
   if (items.length == 0) return null;
 
+  function getKey(item: ListItemWidgetProps) {
+    return typeof item.title == 'string' ? item.title : item.title.text;
+  }
+
   return (
     <section>
       <CollapsibleWidget title={title} open={open}>
-        <ul>
+        <ul className="space-y-6 pt-4">
           {items.map(({ content, sublist, keywords, ...item }, idx) => (
-            <li key={item.title + String(idx)}>
+            <li key={getKey(item) + idx}>
               <ListItemWidget {...item}>
                 {content && <div>{content}</div>}
                 <SimpleListWidget {...sublist} />
