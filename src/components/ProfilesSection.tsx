@@ -1,20 +1,8 @@
 import { useContext } from 'react';
-import {
-  faGithub,
-  faLinkedin,
-  faSoundcloud,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { ResumeContext } from 'src/contexts/ResumeContext';
 import IconLinkWidget from 'src/widgets/IconLinkWidget';
-
-const networkIconMap = {
-  github: faGithub,
-  linkedin: faLinkedin,
-  twitter: faTwitter,
-  soundcloud: faSoundcloud,
-};
+import { getBrandIcon } from 'src/utils/icons';
 
 export default function ProfilesSection() {
   const {
@@ -30,7 +18,7 @@ export default function ProfilesSection() {
               text={username}
               target={url}
               title={network}
-              icon={networkIconMap[network.toLowerCase()] || faUserCircle}
+              icon={getBrandIcon(network, faUserCircle)}
             />
           </li>
         ))}
