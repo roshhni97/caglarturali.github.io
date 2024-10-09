@@ -37,7 +37,7 @@ export default function ListItemWidget({
   }
 
   return (
-    <div className={`pt-4 ${className}`}>
+    <div className={`${className} break-inside-avoid-page pt-6`}>
       <div className="flex items-start">
         <div className="pe-2 pt-1 text-2xl lg:pe-3 lg:text-3xl">
           <FontAwesomeIcon icon={icon} opacity={0.75} />

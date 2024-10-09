@@ -15,38 +15,37 @@ export default function BasicsSection() {
     basics: { name, label, image, phone, email, url, location },
   } = useContext(ResumeContext);
 
-  const locationStr = `${location.city}, ${location.countryCode}`;
+  const locationStr = [location.city, location.countryCode]
+    .filter((loc) => !!loc)
+    .join(', ');
   const locationUrl = `https://maps.google.com/?q=${encodeURIComponent(locationStr)}`;
 
   const contactItems: IconLinkWidgetProps[] = [
-    {
+    phone && {
+      text: phone,
+      target: `tel:${phone}`,
+      icon: faPhone,
+      position: 'after',
+    },
+    email && {
       text: email,
       target: `mailto:${email}`,
       icon: faEnvelope,
       position: 'after',
     },
-    {
+    url && {
       text: url,
       target: url,
       icon: faArrowPointer,
       position: 'after',
     },
-    {
+    locationStr && {
       text: locationStr,
       target: locationUrl,
       icon: faMapMarker,
       position: 'after',
     },
   ];
-
-  if (phone.length > 0) {
-    contactItems.unshift({
-      text: phone,
-      target: `tel:${phone}`,
-      icon: faPhone,
-      position: 'after',
-    });
-  }
 
   return (
     <section className="flex flex-col sm:flex-row">
@@ -69,11 +68,13 @@ export default function BasicsSection() {
         </div>
         <div className="text-sm font-light sm:text-right">
           <ul>
-            {contactItems.map((item) => (
-              <li key={item.text} className="pt-2 sm:pt-1.5">
-                <IconLinkWidget {...item} />
-              </li>
-            ))}
+            {contactItems
+              .filter((item) => !!item)
+              .map((item, idx) => (
+                <li key={item.text + idx} className="pt-2 sm:pt-1.5">
+                  <IconLinkWidget {...item} />
+                </li>
+              ))}
           </ul>
         </div>
       </div>

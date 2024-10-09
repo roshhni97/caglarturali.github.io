@@ -6,7 +6,7 @@ import PrimarySectionWidget from 'src/widgets/PrimarySectionWidget';
 import type { PrimarySectionWidgetProps } from 'src/widgets/PrimarySectionWidget';
 
 export default function CertificatesSection() {
-  const { certificates } = useContext(ResumeContext);
+  const { certificates = [] } = useContext(ResumeContext);
 
   const data: PrimarySectionWidgetProps = {
     title: 'Certificates',

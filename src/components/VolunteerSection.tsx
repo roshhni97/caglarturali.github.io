@@ -1,12 +1,12 @@
 import { useContext } from 'react';
-import { faPeopleRoof } from '@fortawesome/free-solid-svg-icons';
+import { faUserGroup } from '@fortawesome/free-solid-svg-icons';
 import { ResumeContext } from 'src/contexts/ResumeContext';
 import { formatDateRange } from 'src/utils/date';
 import PrimarySectionWidget from 'src/widgets/PrimarySectionWidget';
 import type { PrimarySectionWidgetProps } from 'src/widgets/PrimarySectionWidget';
 
 export default function VolunteerSection() {
-  const { volunteer } = useContext(ResumeContext);
+  const { volunteer = [] } = useContext(ResumeContext);
 
   const data: PrimarySectionWidgetProps = {
     title: 'Volunteer',
@@ -16,7 +16,7 @@ export default function VolunteerSection() {
           title: position,
           subtitles: [{ text: organization, href: url }],
           textRight: formatDateRange(dates.startDate, dates.endDate),
-          icon: faPeopleRoof,
+          icon: faUserGroup,
           content: summary,
           sublist: {
             title: 'Highlights',

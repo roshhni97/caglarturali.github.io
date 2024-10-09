@@ -5,7 +5,7 @@ import type { PrimarySectionWidgetProps } from 'src/widgets/PrimarySectionWidget
 import PrimarySectionWidget from 'src/widgets/PrimarySectionWidget';
 
 export default function ReferencesSection() {
-  const { references } = useContext(ResumeContext);
+  const { references = [] } = useContext(ResumeContext);
 
   const data: PrimarySectionWidgetProps = {
     title: 'References',

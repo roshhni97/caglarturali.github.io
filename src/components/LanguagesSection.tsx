@@ -4,7 +4,7 @@ import type { SideSectionWidgetProps } from 'src/widgets/SideSectionWidget';
 import SideSectionWidget from 'src/widgets/SideSectionWidget';
 
 export default function LanguagesSection() {
-  const { languages } = useContext(ResumeContext);
+  const { languages = [] } = useContext(ResumeContext);
 
   const data: SideSectionWidgetProps = {
     title: 'Languages',

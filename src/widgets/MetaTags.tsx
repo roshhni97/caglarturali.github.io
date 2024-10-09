@@ -5,8 +5,8 @@ import { ResumeContext } from 'src/contexts/ResumeContext';
 export default function MetaTags() {
   const {
     basics: { name, label, summary, url, image },
-    skills,
-    projects,
+    skills = [],
+    projects = [],
   } = useContext(ResumeContext);
 
   const title = [name, label].join(' | ');

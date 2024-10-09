@@ -6,7 +6,7 @@ import PrimarySectionWidget from 'src/widgets/PrimarySectionWidget';
 import type { PrimarySectionWidgetProps } from 'src/widgets/PrimarySectionWidget';
 
 export default function PublicationsSection() {
-  const { publications } = useContext(ResumeContext);
+  const { publications = [] } = useContext(ResumeContext);
 
   const data: PrimarySectionWidgetProps = {
     title: 'Publications',

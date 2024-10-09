@@ -6,7 +6,7 @@ import PrimarySectionWidget from 'src/widgets/PrimarySectionWidget';
 import type { PrimarySectionWidgetProps } from 'src/widgets/PrimarySectionWidget';
 
 export default function AwardsSection() {
-  const { awards } = useContext(ResumeContext);
+  const { awards = [] } = useContext(ResumeContext);
 
   const data: PrimarySectionWidgetProps = {
     title: 'Awards',

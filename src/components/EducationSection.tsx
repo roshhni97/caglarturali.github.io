@@ -1,16 +1,16 @@
 import { useContext } from 'react';
-import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { faUserGraduate } from '@fortawesome/free-solid-svg-icons';
 import { ResumeContext } from 'src/contexts/ResumeContext';
 import { formatDateRange } from 'src/utils/date';
 import PrimarySectionWidget from 'src/widgets/PrimarySectionWidget';
 import type { PrimarySectionWidgetProps } from 'src/widgets/PrimarySectionWidget';
 
 export default function EducationSection() {
-  const { education } = useContext(ResumeContext);
+  const { education = [] } = useContext(ResumeContext);
 
   function formatStudyMeta(studyType: string, score: string) {
     const parts = [studyType, score];
-    return parts.filter((p) => p.length > 0).join(' / ');
+    return parts.filter((p) => !!p).join(' / ');
   }
 
   const data: PrimarySectionWidgetProps = {
@@ -24,7 +24,7 @@ export default function EducationSection() {
             { text: institution, href: url },
           ],
           textRight: formatDateRange(dates.startDate, dates.endDate),
-          icon: faGraduationCap,
+          icon: faUserGraduate,
           sublist: {
             title: 'Notable Courses',
             items: courses,

@@ -4,7 +4,7 @@ import type { SideSectionWidgetProps } from 'src/widgets/SideSectionWidget';
 import SideSectionWidget from 'src/widgets/SideSectionWidget';
 
 export default function InterestsSection() {
-  const { interests } = useContext(ResumeContext);
+  const { interests = [] } = useContext(ResumeContext);
 
   const data: SideSectionWidgetProps = {
     title: 'Interests',
