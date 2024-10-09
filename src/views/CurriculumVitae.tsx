@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import MetaSection from 'src/components/MetaSection';
 import AwardsSection from 'src/components/AwardsSection';
 import BasicsSection from 'src/components/BasicsSection';
 import CertificatesSection from 'src/components/CertificatesSection';
@@ -13,19 +14,18 @@ import SkillsSection from 'src/components/SkillsSection';
 import SummarySection from 'src/components/SummarySection';
 import VolunteerSection from 'src/components/VolunteerSection';
 import WorkSection from 'src/components/WorkSection';
+import FooterSection from 'src/components/FooterSection';
 import { MenuContext } from 'src/contexts/MenuContext';
 import MenuWidget from 'src/widgets/MenuWidget';
-import MetaTags from 'src/widgets/MetaTags';
-import FooterSection from 'src/components/FooterSection';
 
 export default function CurriculumVitae() {
   const { menuStyle, restStyle } = useContext(MenuContext);
 
   return (
     <div className="min-h-screen w-full">
-      <MetaTags />
-      <MenuWidget />
+      <MetaSection />
       <main className="container mx-auto px-6 pb-60 sm:px-0">
+        <MenuWidget />
         <div
           className="border-b-2 border-dashed border-gray-400 py-6 sm:py-8"
           style={restStyle}

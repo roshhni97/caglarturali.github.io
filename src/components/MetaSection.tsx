@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { ResumeContext } from 'src/contexts/ResumeContext';
 
-export default function MetaTags() {
+export default function MetaSection() {
   const {
     basics: { name, label, summary, url, image },
     skills = [],
