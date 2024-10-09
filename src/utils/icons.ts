@@ -1,10 +1,11 @@
 import * as fab from '@fortawesome/free-brands-svg-icons';
 
-export function getBrandIcon(name: string, fallback: fab.IconDefinition) {
+export const getBrandIcon = (function () {
+  const iconMap = {};
   for (const key in fab) {
-    if (key.replace('fa', '').toLowerCase() == name.toLowerCase()) {
-      return fab[key];
-    }
+    iconMap[key.replace('fa', '').toLowerCase()] = fab[key];
   }
-  return fallback;
-}
+  return function (name: string, fallback: fab.IconDefinition) {
+    return iconMap[name.toLowerCase()] || fallback;
+  };
+}());
