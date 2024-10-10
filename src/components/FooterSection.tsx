@@ -5,10 +5,12 @@ import type { IconLinkWidgetProps } from 'src/widgets/IconLinkWidget';
 import pkgJson from '~/package.json';
 
 export default function FooterSection() {
+  const [, repoUrl] = pkgJson.repository.url.split('+');
+
   const links: IconLinkWidgetProps[] = [
     {
       text: 'Source Code',
-      target: pkgJson.homepage,
+      target: repoUrl,
       icon: faCodeBranch,
     },
     {

@@ -1,21 +1,27 @@
 {
   "name": "caglarturali.github.io",
   "version": "1.0.0",
-  "homepage": "https://github.com/caglarturali/caglarturali.github.io",
+  "homepage": "https://turali.js.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caglarturali/caglarturali.github.io.git"
+  },
   "source": "public/index.html",
   "scripts": {
     "init": "npm run clean && npm run copy",
-    "clean": "rm -rf .parcel-cache dist && mkdir dist",
-    "copy": "cp -r data/* dist",
+    "clean": "shx rm -rf .parcel-cache dist && shx mkdir dist",
+    "copy": "shx cp -r data/* dist",
     "start": "npm run init && parcel",
     "build": "npm run init && parcel build",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "format": "prettier --write \"src/**/*\"",
-    "resume": "tsx scripts/processResume.ts",
     "test": "vitest",
     "test:run": "vitest run",
-    "test:cov": "vitest run --coverage"
+    "test:cov": "vitest run --coverage",
+    "resume": "tsx scripts/processResume.ts",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "type": "module",
   "engines": {
@@ -39,6 +45,7 @@
     "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.36.1",
+    "gh-pages": "^6.1.1",
     "globals": "^15.9.0",
     "jsdom": "^25.0.1",
     "parcel": "^2.12.0",
@@ -46,6 +53,7 @@
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
     "process": "^0.11.10",
+    "shx": "^0.3.4",
     "tailwindcss": "^3.4.13",
     "tsx": "^4.19.1",
     "typescript": "^5.5.4",
