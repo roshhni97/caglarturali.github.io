@@ -58,7 +58,7 @@ export default function BasicsSection() {
       </div>
       <div className="flex w-full flex-col sm:flex-row sm:items-end sm:justify-between">
         <div className="py-4 sm:py-0">
-          <h1 className="flex items-end font-sans-narrow text-2xl sm:text-3xl">
+          <h1 className="flex items-end pb-0 font-sans-narrow text-2xl sm:pb-1 sm:text-3xl">
             <span>{name}</span>
             <span className="text-xl">
               <AudioPlayerWidget src="tts.mp3" />

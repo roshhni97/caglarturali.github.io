@@ -21,7 +21,7 @@ export default function FooterSection() {
   ];
 
   return (
-    <footer className="flex justify-center gap-4 pt-4 text-sm opacity-60 sm:gap-6 sm:pt-8 print:hidden">
+    <footer className="flex justify-center gap-4 pt-4 text-xs opacity-60 sm:gap-6 sm:pt-8 print:hidden">
       {links.map((link) => (
         <React.Fragment key={link.text}>
           <IconLinkWidget {...link} />
