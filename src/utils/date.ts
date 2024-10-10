@@ -1,7 +1,7 @@
 export function formatDate(dateString: string): string {
-  if (!dateString) return '';
-
   const date = new Date(dateString);
+  if (Number.isNaN(date.valueOf())) return '';
+
   const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'long',

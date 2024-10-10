@@ -37,7 +37,7 @@ export default function IconLinkWidget({
         icon={icon}
         className="w-6 opacity-85 group-hover:opacity-70"
       />
-      <a {...linkProps} className="select-none">
+      <a {...linkProps} className="select-none" data-testid="icon-link">
         <span>{text}</span>
       </a>
     </p>
