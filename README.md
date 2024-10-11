@@ -1,4 +1,6 @@
-## [JSON Resume](https://jsonresume.org/)–compatible personal website.
+## JSON Resume–compatible personal website.
+
+This is a CV–themed personal website that uses a [JSON Resume](https://github.com/jsonresume) data source.
 
 ### Screenshots
 
@@ -19,3 +21,50 @@
     <img src="screenshots/mobile-dark-2.png" width="200" />
   </div>
 </details>
+
+### Built Using
+
+- React
+- TypeScript
+- Tailwind CSS
+- Parcel
+- Vitest
+
+### Development
+
+You know the drill. Fork it, clone it, install it, run it.
+
+```bash
+# Assuming you have forked under https://github.com/yourusername/yourusername.github.io
+git clone https://github.com/yourusername/yourusername.github.io.git
+cd yourusername.github.io
+npm install
+npm start
+```
+
+To build for production, run;
+
+```bash
+npm run build
+```
+
+### Personal Use
+
+You are free to use it as your personal website. Note that you might want to keep an upstream remote pointing to this repository since I will be making changes along the way. Follow these steps to customize it for your own use;
+
+- Update [`resume.json`](data/resume.json) with your own personal details. You can also use [`resume.sample.json`](data/resume.sample.json) as a reference.
+
+- Run `npm run resume` to perform some static processing including;
+
+  - Generation of a TTS-audio representation of your name. I have a Turkish name, I needed this.
+
+- Adjust the domain. Since this project is set up for GitHub Pages deployment with a custom domain, you need to make adjustments to the following;
+
+  - [`homepage`](package.json#L4) field in **package.json**
+  - [`cname`](.github/workflows/gh-pages.yml#L37) key in **gh-pages.yml**. Remove this if you are going to use `github.io` subdomain.
+
+### Live Preview
+
+You can live preview your publicly available resume data by pointing the `resume` parameter to it. Example usage:
+
+https://turali.js.org/?resume=https://raw.githubusercontent.com/thomasdavis/resume/refs/heads/master/resume.json
