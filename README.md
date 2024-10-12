@@ -1,3 +1,5 @@
+[![Deploy to GitHub Pages](https://github.com/caglarturali/caglarturali.github.io/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/caglarturali/caglarturali.github.io/actions/workflows/gh-pages.yml)
+
 ## JSON Resume–compatible personal website.
 
 This is a CV–themed personal website that uses a [JSON Resume](https://github.com/jsonresume) data source.
@@ -61,7 +63,7 @@ You are free to use it as your personal website. Note that you might want to kee
 - Adjust the domain. Since this project is set up for GitHub Pages deployment with a custom domain, you need to make adjustments to the following;
 
   - [`homepage`](package.json#L4) field in **package.json**
-  - [`cname`](.github/workflows/gh-pages.yml#L37) key in **gh-pages.yml**. Remove this if you are going to use `github.io` subdomain.
+  - [`cname`](.github/workflows/gh-pages.yml#L38) key in **gh-pages.yml**. Remove this if you are going to use `github.io` subdomain.
 
 ### Live Preview
 
