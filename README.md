@@ -65,6 +65,6 @@ You are free to use it as your personal website. Note that you might want to kee
 
 ### Live Preview
 
-You can live preview your publicly available resume data by pointing the `resume` parameter to it. Example usage:
+You can also live preview your publicly accessible resume data by pointing the `resume` parameter to it. Example usage:
 
 https://turali.js.org/?resume=https://raw.githubusercontent.com/thomasdavis/resume/refs/heads/master/resume.json
