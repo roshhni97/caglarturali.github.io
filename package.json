@@ -8,7 +8,7 @@
   },
   "source": "public/index.html",
   "scripts": {
-    "init": "npm run clean && npm run copy",
+    "init": "npm run clean && npm run copy && npm run resume",
     "clean": "shx rm -rf .parcel-cache dist && shx mkdir dist",
     "copy": "shx cp -r data/* dist",
     "start": "npm run init && parcel",

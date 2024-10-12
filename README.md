@@ -56,7 +56,7 @@ You are free to use it as your personal website. Note that you might want to kee
 
 - Update [`resume.json`](data/resume.json) with your own personal details. You can also use [`resume.sample.json`](data/resume.sample.json) as a reference.
 
-- Run `npm run resume` to perform some static processing including;
+- Update [`extras.json`](data/extras.json). This will be used alongside your resume data to perform some static processing including;
 
   - Generation of a TTS-audio representation of your name. I have a Turkish name, I needed this.
 

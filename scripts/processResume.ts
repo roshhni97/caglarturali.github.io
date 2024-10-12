@@ -1,24 +1,10 @@
-import readline from 'readline/promises';
 import { writeFile } from 'fs/promises';
-import { Resume } from 'src/types/Resume';
-import resumeJson from 'data/resume.json';
+import resume from 'data/resume.json';
+import extras from 'data/extras.json';
 
-const resume = resumeJson as Resume;
-
-async function prompt(msg: string, def?: string) {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-  const txt = def ? ` [${def}]` : '';
-  const res = await rl.question(`${msg}${txt}: `);
-  rl.close();
-  return res || def || '';
-}
-
-async function getTTS(text: string, outputPath: string) {
+async function getTTS(text: string, lang: string, outputPath: string) {
   text = encodeURIComponent(text);
-  const lang = await prompt('Lang code for tts', 'en-us');
+  lang = lang || 'en-us';
   const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${lang}&q=${text}`;
   const res = await fetch(url);
   if (!res.ok) {
@@ -30,4 +16,4 @@ async function getTTS(text: string, outputPath: string) {
   await writeFile(outputPath, buffer);
 }
 
-await getTTS(resume.basics.name, 'data/tts.mp3');
+await getTTS(resume.basics.name, extras.tts.lang, 'dist/tts.mp3');
