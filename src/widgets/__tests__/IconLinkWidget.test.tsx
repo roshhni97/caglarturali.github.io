@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { faEarth } from '@fortawesome/free-solid-svg-icons';
 import IconLinkWidget from '../IconLinkWidget';
 
-describe('IconLinkWidget', () => {
+describe('<IconLinkWidget />', () => {
   test('should render with a text, href target and fallback title', async () => {
     const text = 'Dummy Link';
     const target = 'https://hello.world';

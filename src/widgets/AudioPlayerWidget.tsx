@@ -5,13 +5,18 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import useAudioPlayer from 'src/hooks/useAudioPlayer';
 
+export const icons = {
+  play: faPlayCircle,
+  pause: faPauseCircle,
+};
+
 export type AudioPlayerWidgetProps = {
   src: string | HTMLAudioElement;
 };
 
 export default function AudioPlayerWidget({ src }: AudioPlayerWidgetProps) {
   const { playing, togglePlay } = useAudioPlayer(src);
-  const icon = playing ? faPauseCircle : faPlayCircle;
+  const icon = playing ? icons.pause : icons.play;
 
   return (
     <button
