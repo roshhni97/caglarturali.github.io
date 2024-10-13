@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { faEarth } from '@fortawesome/free-solid-svg-icons';
-import IconLinkWidget from 'src/widgets/IconLinkWidget';
+import IconLinkWidget from '../IconLinkWidget';
 
 describe('IconLinkWidget', () => {
   test('should render with a text, href target and fallback title', async () => {

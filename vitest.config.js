@@ -1,22 +1,22 @@
 import { resolve } from 'path';
-import { defineConfig } from 'vitest/config';
+import { defaultExclude, defineConfig } from 'vitest/config';
 
 export default defineConfig({
   resolve: {
     alias: {
       '~': resolve(__dirname, '.'),
-      src: resolve(__dirname, './src'),
     },
   },
   test: {
     globals: true,
     environment: 'jsdom',
+    exclude: [...defaultExclude],
     coverage: {
       provider: 'v8',
       include: ['src/**/*.{ts,tsx}'],
-      exclude: ['src/types/**/*'],
+      exclude: ['src/**/__tests__/**/*', 'src/types/**/*'],
       all: true,
     },
-    setupFiles: 'tests/setup.ts',
+    setupFiles: 'src/setupTests.ts',
   },
 });
