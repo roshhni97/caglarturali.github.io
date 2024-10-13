@@ -32,12 +32,16 @@ export default function IconLinkWidget({
   }
 
   return (
-    <p className="group inline-flex items-center" style={pStyles} role="link">
+    <p
+      className="group inline-flex items-center"
+      style={pStyles}
+      data-testid="icon-link"
+    >
       <FontAwesomeIcon
         icon={icon}
         className="w-6 opacity-85 group-hover:opacity-70"
       />
-      <a {...linkProps} className="select-none" data-testid="icon-link">
+      <a {...linkProps} className="select-none">
         <span>{text}</span>
       </a>
     </p>

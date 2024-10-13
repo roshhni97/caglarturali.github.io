@@ -10,10 +10,15 @@ describe('<IconLinkWidget />', () => {
     render(<IconLinkWidget text={text} target={target} icon={faEarth} />);
 
     await screen.findByTestId('icon-link');
+    const iconLink = screen.getByTestId('icon-link');
+    const icon = iconLink.querySelector('svg');
+    const link = iconLink.querySelector('a');
 
-    expect(screen.getByTestId('icon-link')).toHaveTextContent(text);
-    expect(screen.getByTestId('icon-link')).toHaveAttribute('href', target);
-    expect(screen.getByTestId('icon-link')).toHaveAttribute('title', text);
+    expect(icon).toBeInTheDocument();
+    expect(icon).toHaveAttribute('data-icon', faEarth.iconName);
+    expect(link).toHaveTextContent(text);
+    expect(link).toHaveAttribute('href', target);
+    expect(link).toHaveAttribute('title', text);
   });
 
   test('should render with a function target and handle click', async () => {
@@ -21,9 +26,11 @@ describe('<IconLinkWidget />', () => {
     render(<IconLinkWidget text="Dummy Link" target={target} icon={faEarth} />);
 
     await screen.findByTestId('icon-link');
-    await userEvent.click(screen.getByTestId('icon-link'));
+    const iconLink = screen.getByTestId('icon-link');
+    const link = iconLink.querySelector('a');
+    await userEvent.click(link);
 
-    expect(screen.getByTestId('icon-link')).toHaveAttribute('href', '#');
+    expect(link).toHaveAttribute('href', '#');
     expect(target).toHaveBeenCalledOnce();
   });
 });
