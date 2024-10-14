@@ -1,4 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import AudioPlayerWidget, { icons } from '../AudioPlayerWidget';
 
 // Mock the Audio object globally
@@ -31,31 +32,23 @@ describe('<AudioPlayerWidget />', () => {
     expect(icon).toHaveAttribute('data-icon', icons.play.iconName);
   });
 
-  test('should toggle play/pause state when the button is clicked', () => {
+  test('should toggle play/pause state when the button is clicked', async () => {
     render(<AudioPlayerWidget src={'test.mp3'} />);
 
     const button = screen.getByRole('button');
+    const icon = button.querySelector('svg');
 
     // Initial state
-    expect(button.querySelector('svg')).toHaveAttribute(
-      'data-icon',
-      icons.play.iconName,
-    );
+    expect(icon).toHaveAttribute('data-icon', icons.play.iconName);
 
     // Simulate a click to play
-    fireEvent.click(button);
+    await userEvent.click(button);
     expect(mockPlay).toHaveBeenCalled();
-    expect(button.querySelector('svg')).toHaveAttribute(
-      'data-icon',
-      icons.pause.iconName,
-    );
+    expect(icon).toHaveAttribute('data-icon', icons.pause.iconName);
 
     // Simulate a click to pause
-    fireEvent.click(button);
+    await userEvent.click(button);
     expect(mockPause).toHaveBeenCalled();
-    expect(button.querySelector('svg')).toHaveAttribute(
-      'data-icon',
-      icons.play.iconName,
-    );
+    expect(icon).toHaveAttribute('data-icon', icons.play.iconName);
   });
 });
