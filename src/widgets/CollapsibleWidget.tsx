@@ -16,6 +16,7 @@ export default function CollapsibleWidget({
     <details
       open={open}
       className="group border-b border-dashed border-gray-500/50 pb-3"
+      data-testid="collapsible"
     >
       <summary className="cursor-pointer select-none list-none font-sans-narrow text-sm font-light uppercase">
         <FontAwesomeIcon
