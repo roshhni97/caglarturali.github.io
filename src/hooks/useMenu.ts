@@ -23,5 +23,5 @@ export default function useMenu() {
     setIsOpen(!isOpen);
   }
 
-  return [isOpen, toggleOpen] as const;
+  return { isOpen, toggleOpen };
 }

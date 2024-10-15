@@ -5,7 +5,7 @@ import type { MenuState } from 'src/types/Menu';
 export const MenuContext = createContext<MenuState | undefined>(undefined);
 
 export const MenuProvider = ({ children }: PropsWithChildren) => {
-  const [isOpen, toggleOpen] = useMenu();
+  const { isOpen, toggleOpen } = useMenu();
 
   const menuStyle: React.CSSProperties = isOpen
     ? {
