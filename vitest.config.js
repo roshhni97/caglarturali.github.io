@@ -1,5 +1,9 @@
 import { resolve } from 'path';
-import { defaultExclude, defineConfig } from 'vitest/config';
+import {
+  coverageConfigDefaults,
+  defaultExclude,
+  defineConfig,
+} from 'vitest/config';
 
 export default defineConfig({
   resolve: {
@@ -14,8 +18,8 @@ export default defineConfig({
     exclude: [...defaultExclude],
     coverage: {
       provider: 'v8',
-      include: ['src/**/*.{ts,tsx}'],
-      exclude: ['src/**/__tests__/**/*', 'src/types/**/*'],
+      include: ['src/**/*'],
+      exclude: [...coverageConfigDefaults.exclude, '**/types/**'],
       all: true,
     },
     setupFiles: 'src/setupTests.ts',
