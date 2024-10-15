@@ -21,6 +21,7 @@ export default function KeywordsWidget({
     <div
       className={`flex flex-wrap text-xs ${className}`}
       style={{ gap: `${gap * 0.25}rem` }}
+      data-testid="keywords"
     >
       {items.map((item) => (
         <div key={item}>
