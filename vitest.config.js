@@ -22,6 +22,6 @@ export default defineConfig({
       exclude: [...coverageConfigDefaults.exclude, '**/types/**'],
       all: true,
     },
-    setupFiles: 'src/setupTests.ts',
+    setupFiles: './vitest.setup.ts',
   },
 });

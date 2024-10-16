@@ -5,7 +5,7 @@ export type ResumeResponse = Resume & {
 };
 
 export default async function fetchResumeData(): Promise<ResumeResponse> {
-  const params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(global.location.search);
   const resumeParam = params.get('resume');
 
   const resumePath = resumeParam || '/resume.json';
