@@ -1,8 +1,10 @@
 import { createContext, PropsWithChildren } from 'react';
+import { ResumeResponse } from 'src/api/fetchResumeData';
 import useResumeData from 'src/hooks/useResumeData';
-import type { Resume } from 'src/types/Resume';
 
-export const ResumeContext = createContext<Resume | undefined>(undefined);
+export const ResumeContext = createContext<ResumeResponse | undefined>(
+  undefined,
+);
 
 export const ResumeProvider = ({ children }: PropsWithChildren) => {
   const { data: resumeData } = useResumeData();

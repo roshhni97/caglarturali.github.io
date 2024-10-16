@@ -13,6 +13,7 @@ import AudioPlayerWidget from 'src/widgets/AudioPlayerWidget';
 export default function BasicsSection() {
   const {
     basics: { name, label, image, phone, email, url, location },
+    isExternal,
   } = useContext(ResumeContext);
 
   const locationStr = [location.city, location.countryCode]
@@ -60,7 +61,7 @@ export default function BasicsSection() {
         <div className="py-4 sm:py-0">
           <h1 className="flex items-end pb-0 font-sans-narrow text-2xl sm:pb-1 sm:text-3xl">
             <span>{name}</span>
-            <span className="text-xl">
+            <span className="text-xl" hidden={isExternal}>
               <AudioPlayerWidget src="tts.mp3" />
             </span>
           </h1>
