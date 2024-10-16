@@ -1,8 +1,8 @@
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
-import { ResumeContext } from 'src/contexts/ResumeContext';
-import type { PrimarySectionWidgetProps } from 'src/widgets/PrimarySectionWidget';
-import PrimarySectionWidget from 'src/widgets/PrimarySectionWidget';
+import { ResumeContext } from 'contexts/ResumeContext';
+import type { PrimarySectionWidgetProps } from 'widgets/PrimarySectionWidget';
+import PrimarySectionWidget from 'widgets/PrimarySectionWidget';
 
 export default function ReferencesSection() {
   const { references = [] } = useContext(ResumeContext);

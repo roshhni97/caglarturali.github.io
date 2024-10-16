@@ -4,9 +4,10 @@
   "compilerOptions": {
     "module": "ESNext",
     "target": "ESNext",
-    "baseUrl": ".",
+    "rootDir": ".",
+    "baseUrl": "./src",
     "paths": {
-      "~/*": ["./*"]
+      "~/*": ["../*"]
     },
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,

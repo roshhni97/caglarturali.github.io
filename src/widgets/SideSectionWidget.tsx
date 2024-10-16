@@ -1,5 +1,5 @@
-import type { KeywordsWidgetProps } from 'src/widgets/KeywordsWidget';
-import KeywordsWidget from 'src/widgets/KeywordsWidget';
+import type { KeywordsWidgetProps } from 'widgets/KeywordsWidget';
+import KeywordsWidget from 'widgets/KeywordsWidget';
 
 export type SideSectionWidgetProps = {
   title: string;

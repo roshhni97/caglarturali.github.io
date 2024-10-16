@@ -1,6 +1,6 @@
 import { createContext, PropsWithChildren } from 'react';
-import useMenu from 'src/hooks/useMenu';
-import type { MenuState } from 'src/types/Menu';
+import useMenu from 'hooks/useMenu';
+import type { MenuState } from 'types/Menu';
 
 export const MenuContext = createContext<MenuState | undefined>(undefined);
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { faCodeBranch, faPrint } from '@fortawesome/free-solid-svg-icons';
-import IconLinkWidget from 'src/widgets/IconLinkWidget';
-import type { IconLinkWidgetProps } from 'src/widgets/IconLinkWidget';
+import IconLinkWidget from 'widgets/IconLinkWidget';
+import type { IconLinkWidgetProps } from 'widgets/IconLinkWidget';
 import pkgJson from '~/package.json';
 
 export default function FooterSection() {

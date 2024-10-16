@@ -1,14 +1,14 @@
 import { useContext } from 'react';
-import { ResumeContext } from 'src/contexts/ResumeContext';
+import { ResumeContext } from 'contexts/ResumeContext';
 import {
   faArrowPointer,
   faEnvelope,
   faMapMarker,
   faPhone,
 } from '@fortawesome/free-solid-svg-icons';
-import IconLinkWidget from 'src/widgets/IconLinkWidget';
-import type { IconLinkWidgetProps } from 'src/widgets/IconLinkWidget';
-import AudioPlayerWidget from 'src/widgets/AudioPlayerWidget';
+import IconLinkWidget from 'widgets/IconLinkWidget';
+import type { IconLinkWidgetProps } from 'widgets/IconLinkWidget';
+import AudioPlayerWidget from 'widgets/AudioPlayerWidget';
 
 export default function BasicsSection() {
   const {

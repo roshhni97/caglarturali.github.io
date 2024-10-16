@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { faAward } from '@fortawesome/free-solid-svg-icons';
-import { ResumeContext } from 'src/contexts/ResumeContext';
-import { formatDate } from 'src/utils/date';
-import PrimarySectionWidget from 'src/widgets/PrimarySectionWidget';
-import type { PrimarySectionWidgetProps } from 'src/widgets/PrimarySectionWidget';
+import { ResumeContext } from 'contexts/ResumeContext';
+import { formatDate } from 'utils/date';
+import PrimarySectionWidget from 'widgets/PrimarySectionWidget';
+import type { PrimarySectionWidgetProps } from 'widgets/PrimarySectionWidget';
 
 export default function AwardsSection() {
   const { awards = [] } = useContext(ResumeContext);

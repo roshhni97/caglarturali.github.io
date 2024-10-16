@@ -1,9 +1,9 @@
 import { faCertificate } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
-import { ResumeContext } from 'src/contexts/ResumeContext';
-import { formatDate } from 'src/utils/date';
-import PrimarySectionWidget from 'src/widgets/PrimarySectionWidget';
-import type { PrimarySectionWidgetProps } from 'src/widgets/PrimarySectionWidget';
+import { ResumeContext } from 'contexts/ResumeContext';
+import { formatDate } from 'utils/date';
+import PrimarySectionWidget from 'widgets/PrimarySectionWidget';
+import type { PrimarySectionWidgetProps } from 'widgets/PrimarySectionWidget';
 
 export default function CertificatesSection() {
   const { certificates = [] } = useContext(ResumeContext);

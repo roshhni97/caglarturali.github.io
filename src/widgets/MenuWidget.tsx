@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { MenuContext } from 'src/contexts/MenuContext';
+import { MenuContext } from 'contexts/MenuContext';
 
 export const icons = {
   open: faBars,

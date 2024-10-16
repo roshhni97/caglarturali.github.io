@@ -1,6 +1,6 @@
 import { writeFile } from 'fs/promises';
-import resume from 'data/resume.json';
-import extras from 'data/extras.json';
+import resume from '~/data/resume.json';
+import extras from '~/data/extras.json';
 
 async function getTTS(text: string, lang: string, outputPath: string) {
   text = encodeURIComponent(text);

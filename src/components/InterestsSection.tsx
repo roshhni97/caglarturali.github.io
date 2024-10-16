@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { ResumeContext } from 'src/contexts/ResumeContext';
-import type { SideSectionWidgetProps } from 'src/widgets/SideSectionWidget';
-import SideSectionWidget from 'src/widgets/SideSectionWidget';
+import { ResumeContext } from 'contexts/ResumeContext';
+import type { SideSectionWidgetProps } from 'widgets/SideSectionWidget';
+import SideSectionWidget from 'widgets/SideSectionWidget';
 
 export default function InterestsSection() {
   const { interests = [] } = useContext(ResumeContext);

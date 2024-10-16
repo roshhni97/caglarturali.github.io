@@ -1,11 +1,11 @@
-import CollapsibleWidget from 'src/widgets/CollapsibleWidget';
-import type { CollapsibleWidgetProps } from 'src/widgets/CollapsibleWidget';
-import ListItemWidget from 'src/widgets/ListItemWidget';
-import type { ListItemWidgetProps } from 'src/widgets/ListItemWidget';
-import SimpleListWidget from 'src/widgets/SimpleListWidget';
-import type { SimpleListWidgetProps } from 'src/widgets/SimpleListWidget';
-import KeywordsWidget from 'src/widgets/KeywordsWidget';
-import type { KeywordsWidgetProps } from 'src/widgets/KeywordsWidget';
+import CollapsibleWidget from 'widgets/CollapsibleWidget';
+import type { CollapsibleWidgetProps } from 'widgets/CollapsibleWidget';
+import ListItemWidget from 'widgets/ListItemWidget';
+import type { ListItemWidgetProps } from 'widgets/ListItemWidget';
+import SimpleListWidget from 'widgets/SimpleListWidget';
+import type { SimpleListWidgetProps } from 'widgets/SimpleListWidget';
+import KeywordsWidget from 'widgets/KeywordsWidget';
+import type { KeywordsWidgetProps } from 'widgets/KeywordsWidget';
 
 export type PrimarySectionWidgetProps = Omit<
   CollapsibleWidgetProps,

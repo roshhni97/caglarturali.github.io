@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { ResumeContext } from 'src/contexts/ResumeContext';
+import { ResumeContext } from 'contexts/ResumeContext';
 
 export default function MetaSection() {
   const {

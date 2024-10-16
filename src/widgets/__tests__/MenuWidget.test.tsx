@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { MenuProvider } from '~/src/contexts/MenuContext';
+import { MenuProvider } from 'contexts/MenuContext';
 import MenuWidget, { icons } from '../MenuWidget';
 
 describe('<MenuWidget />', () => {

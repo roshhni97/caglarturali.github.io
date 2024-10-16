@@ -1,4 +1,4 @@
-import type { Resume } from 'src/types/Resume';
+import type { Resume } from 'types/Resume';
 
 export type ResumeResponse = Resume & {
   isExternal?: boolean;

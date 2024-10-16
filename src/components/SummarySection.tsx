@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ResumeContext } from 'src/contexts/ResumeContext';
+import { ResumeContext } from 'contexts/ResumeContext';
 
 export default function SummarySection() {
   const {

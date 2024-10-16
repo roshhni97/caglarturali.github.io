@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { ResumeContext } from 'src/contexts/ResumeContext';
-import IconLinkWidget from 'src/widgets/IconLinkWidget';
-import { getBrandIcon } from 'src/utils/icons';
+import { ResumeContext } from 'contexts/ResumeContext';
+import IconLinkWidget from 'widgets/IconLinkWidget';
+import { getBrandIcon } from 'utils/icons';
 
 export default function ProfilesSection() {
   const {

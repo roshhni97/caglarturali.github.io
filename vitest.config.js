@@ -1,17 +1,12 @@
-import { resolve } from 'path';
 import {
   coverageConfigDefaults,
   defaultExclude,
   defineConfig,
 } from 'vitest/config';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      '~': resolve(__dirname, '.'),
-      src: resolve(__dirname, './src'),
-    },
-  },
+  plugins: [tsconfigPaths()],
   test: {
     globals: true,
     environment: 'jsdom',

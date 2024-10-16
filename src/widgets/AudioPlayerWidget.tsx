@@ -3,7 +3,7 @@ import {
   faPauseCircle,
   faPlayCircle,
 } from '@fortawesome/free-regular-svg-icons';
-import useAudioPlayer from 'src/hooks/useAudioPlayer';
+import useAudioPlayer from 'hooks/useAudioPlayer';
 
 export const icons = {
   play: faPlayCircle,
