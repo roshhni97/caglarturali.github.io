@@ -5,6 +5,7 @@ describe('fetchResumeData', () => {
     const res = await fetchResumeData();
     expectTypeOf(res).toMatchTypeOf<ResumeResponse>();
     expect(res.basics).toBeDefined();
+    expect(res.isExternal).toBe(false);
   });
 
   test('should fetch external resume data', async () => {
@@ -20,5 +21,6 @@ describe('fetchResumeData', () => {
     const res = await fetchResumeData();
     expectTypeOf(res).toMatchTypeOf<ResumeResponse>();
     expect(res.basics).toBeDefined();
+    expect(res.isExternal).toBe(true);
   });
 });
