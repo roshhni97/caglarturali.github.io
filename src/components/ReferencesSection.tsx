@@ -1,15 +1,16 @@
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
-import { useContext } from 'react';
-import { ResumeContext } from 'contexts/ResumeContext';
-import type { PrimarySectionWidgetProps } from 'widgets/PrimarySectionWidget';
 import PrimarySectionWidget from 'widgets/PrimarySectionWidget';
+import type { PrimarySectionWidgetProps } from 'widgets/PrimarySectionWidget';
+import type { SectionProps } from 'types/Props';
+import type { ResumeReference } from 'types/Resume';
 
-export default function ReferencesSection() {
-  const { references = [] } = useContext(ResumeContext);
-
-  const data: PrimarySectionWidgetProps = {
-    title: 'References',
-    items: references.map(({ name, reference }) => {
+export default function ReferencesSection({
+  title,
+  data = [],
+}: SectionProps<ResumeReference[]>) {
+  const props: PrimarySectionWidgetProps = {
+    title,
+    items: data.map(({ name, reference }) => {
       return {
         title: name,
         icon: faQuoteLeft,
@@ -18,5 +19,5 @@ export default function ReferencesSection() {
     }),
   };
 
-  return <PrimarySectionWidget {...data} />;
+  return <PrimarySectionWidget {...props} />;
 }

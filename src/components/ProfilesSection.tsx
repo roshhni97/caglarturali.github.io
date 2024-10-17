@@ -1,13 +1,11 @@
-import { useContext } from 'react';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { ResumeContext } from 'contexts/ResumeContext';
 import IconLinkWidget from 'widgets/IconLinkWidget';
 import { getBrandIcon } from 'utils/icons';
+import type { SectionProps } from 'types/Props';
+import type { ResumeBasics } from 'types/Resume';
 
-export default function ProfilesSection() {
-  const {
-    basics: { profiles },
-  } = useContext(ResumeContext);
+export default function ProfilesSection({ data }: SectionProps<ResumeBasics>) {
+  const { profiles = [] } = data;
 
   return (
     <section>

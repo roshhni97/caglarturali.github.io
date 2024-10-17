@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import { ResumeContext } from 'contexts/ResumeContext';
 import {
   faArrowPointer,
   faEnvelope,
@@ -9,16 +7,22 @@ import {
 import IconLinkWidget from 'widgets/IconLinkWidget';
 import type { IconLinkWidgetProps } from 'widgets/IconLinkWidget';
 import AudioPlayerWidget from 'widgets/AudioPlayerWidget';
+import type { SectionProps } from 'types/Props';
+import type { ResumeBasics } from 'types/Resume';
+import { joinItems } from 'utils/text';
 
-export default function BasicsSection() {
+export default function BasicsSection({
+  data,
+}: SectionProps<{
+  basics: ResumeBasics;
+  isExternal: boolean;
+}>) {
   const {
     basics: { name, label, image, phone, email, url, location },
     isExternal,
-  } = useContext(ResumeContext);
+  } = data;
 
-  const locationStr = [location.city, location.countryCode]
-    .filter((loc) => !!loc)
-    .join(', ');
+  const locationStr = joinItems(', ', location.city, location.countryCode);
   const locationUrl = `https://maps.google.com/?q=${encodeURIComponent(locationStr)}`;
 
   const contactItems: IconLinkWidgetProps[] = [

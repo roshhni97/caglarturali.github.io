@@ -1,14 +1,15 @@
-import { useContext } from 'react';
-import { ResumeContext } from 'contexts/ResumeContext';
-import type { SideSectionWidgetProps } from 'widgets/SideSectionWidget';
 import SideSectionWidget from 'widgets/SideSectionWidget';
+import type { SideSectionWidgetProps } from 'widgets/SideSectionWidget';
+import type { SectionProps } from 'types/Props';
+import type { ResumeLanguage } from 'types/Resume';
 
-export default function LanguagesSection() {
-  const { languages = [] } = useContext(ResumeContext);
-
-  const data: SideSectionWidgetProps = {
-    title: 'Languages',
-    items: languages.map(({ language, fluency }) => {
+export default function LanguagesSection({
+  title,
+  data = [],
+}: SectionProps<ResumeLanguage[]>) {
+  const props: SideSectionWidgetProps = {
+    title,
+    items: data.map(({ language, fluency }) => {
       return {
         title: language,
         subtitle: fluency,
@@ -16,5 +17,5 @@ export default function LanguagesSection() {
     }),
   };
 
-  return <SideSectionWidget {...data} />;
+  return <SideSectionWidget {...props} />;
 }

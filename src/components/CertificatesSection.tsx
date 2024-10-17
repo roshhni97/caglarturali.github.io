@@ -1,16 +1,17 @@
 import { faCertificate } from '@fortawesome/free-solid-svg-icons';
-import { useContext } from 'react';
-import { ResumeContext } from 'contexts/ResumeContext';
 import { formatDate } from 'utils/date';
 import PrimarySectionWidget from 'widgets/PrimarySectionWidget';
 import type { PrimarySectionWidgetProps } from 'widgets/PrimarySectionWidget';
+import type { SectionProps } from 'types/Props';
+import type { ResumeCertificate } from 'types/Resume';
 
-export default function CertificatesSection() {
-  const { certificates = [] } = useContext(ResumeContext);
-
-  const data: PrimarySectionWidgetProps = {
-    title: 'Certificates',
-    items: certificates.map(({ name, url, issuer, date }) => {
+export default function CertificatesSection({
+  title,
+  data = [],
+}: SectionProps<ResumeCertificate[]>) {
+  const props: PrimarySectionWidgetProps = {
+    title,
+    items: data.map(({ name, url, issuer, date }) => {
       return {
         title: { text: name, href: url },
         subtitles: [issuer],
@@ -20,5 +21,5 @@ export default function CertificatesSection() {
     }),
   };
 
-  return <PrimarySectionWidget {...data} />;
+  return <PrimarySectionWidget {...props} />;
 }

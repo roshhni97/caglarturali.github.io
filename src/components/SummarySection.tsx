@@ -1,10 +1,12 @@
-import { useContext } from 'react';
-import { ResumeContext } from 'contexts/ResumeContext';
+import type { SectionProps } from 'types/Props';
+import type { ResumeBasics } from 'types/Resume';
 
-export default function SummarySection() {
-  const {
-    basics: { summary },
-  } = useContext(ResumeContext);
+export default function SummarySection({ data }: SectionProps<ResumeBasics>) {
+  const { summary } = data;
 
-  return <section>{summary}</section>;
+  return (
+    <section>
+      <p>{summary}</p>
+    </section>
+  );
 }

@@ -1,27 +1,26 @@
-import { useContext } from 'react';
 import { faFileLines } from '@fortawesome/free-solid-svg-icons';
-import { ResumeContext } from 'contexts/ResumeContext';
 import { formatDate } from 'utils/date';
 import PrimarySectionWidget from 'widgets/PrimarySectionWidget';
 import type { PrimarySectionWidgetProps } from 'widgets/PrimarySectionWidget';
+import type { SectionProps } from 'types/Props';
+import type { ResumePublication } from 'types/Resume';
 
-export default function PublicationsSection() {
-  const { publications = [] } = useContext(ResumeContext);
-
-  const data: PrimarySectionWidgetProps = {
-    title: 'Publications',
-    items: publications.map(
-      ({ name, publisher, url, summary, releaseDate }) => {
-        return {
-          title: { text: name, href: url },
-          subtitles: [publisher],
-          textRight: formatDate(releaseDate),
-          icon: faFileLines,
-          content: summary,
-        };
-      },
-    ),
+export default function PublicationsSection({
+  title,
+  data = [],
+}: SectionProps<ResumePublication[]>) {
+  const props: PrimarySectionWidgetProps = {
+    title,
+    items: data.map(({ name, publisher, url, summary, releaseDate }) => {
+      return {
+        title: { text: name, href: url },
+        subtitles: [publisher],
+        textRight: formatDate(releaseDate),
+        icon: faFileLines,
+        content: summary,
+      };
+    }),
   };
 
-  return <PrimarySectionWidget {...data} />;
+  return <PrimarySectionWidget {...props} />;
 }

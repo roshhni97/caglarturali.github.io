@@ -1,16 +1,18 @@
-import { useContext } from 'react';
 import { faTools } from '@fortawesome/free-solid-svg-icons';
-import { ResumeContext } from 'contexts/ResumeContext';
 import { formatDateRange } from 'utils/date';
 import PrimarySectionWidget from 'widgets/PrimarySectionWidget';
 import type { PrimarySectionWidgetProps } from 'widgets/PrimarySectionWidget';
+import type { SectionProps } from 'types/Props';
+import type { ResumeProject } from 'types/Resume';
 
-export default function ProjectsSection() {
-  const { projects = [] } = useContext(ResumeContext);
-
-  const data: PrimarySectionWidgetProps = {
-    title: 'Projects',
-    items: projects.map(
+export default function ProjectsSection({
+  title,
+  subtitle,
+  data = [],
+}: SectionProps<ResumeProject[]>) {
+  const props: PrimarySectionWidgetProps = {
+    title,
+    items: data.map(
       ({
         name,
         description,
@@ -28,7 +30,7 @@ export default function ProjectsSection() {
           icon: faTools,
           content: description,
           sublist: {
-            title: 'Highlights',
+            title: subtitle,
             items: highlights,
           },
           keywords: {
@@ -40,5 +42,5 @@ export default function ProjectsSection() {
     ),
   };
 
-  return <PrimarySectionWidget {...data} />;
+  return <PrimarySectionWidget {...props} />;
 }

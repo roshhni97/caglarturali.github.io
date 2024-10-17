@@ -4,7 +4,7 @@ import IconLinkWidget from 'widgets/IconLinkWidget';
 import type { IconLinkWidgetProps } from 'widgets/IconLinkWidget';
 import pkgJson from '~/package.json';
 
-export default function FooterSection() {
+export default function CVFooter() {
   const [, repoUrl] = pkgJson.repository.url.split('+');
 
   const links: IconLinkWidgetProps[] = [

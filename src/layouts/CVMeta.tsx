@@ -1,16 +1,22 @@
-import { useContext } from 'react';
 import { Helmet } from 'react-helmet';
-import { ResumeContext } from 'contexts/ResumeContext';
+import { joinItems, summarize } from 'utils/text';
+import type { ResumeBasics, ResumeProject, ResumeSkill } from 'types/Resume';
 
-export default function MetaSection() {
-  const {
-    basics: { name, label, summary, url, image },
-    skills = [],
-    projects = [],
-  } = useContext(ResumeContext);
+export type CVMetaProps = {
+  basics: ResumeBasics;
+  skills: ResumeSkill[];
+  projects: ResumeProject[];
+};
 
-  const title = [name, label].join(' | ');
-  const desc = summary.split(' ').slice(0, 30).join(' ') + '...';
+export default function CVMeta({
+  basics,
+  skills = [],
+  projects = [],
+}: CVMetaProps) {
+  const { name, label, summary, url, image } = basics;
+
+  const title = joinItems(' | ', name, label);
+  const desc = summarize(summary, 30);
   const keywords = [
     ...skills.flatMap(({ keywords }) => keywords),
     ...projects.flatMap(({ keywords }) => keywords),

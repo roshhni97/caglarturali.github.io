@@ -1,14 +1,15 @@
-import { useContext } from 'react';
-import { ResumeContext } from 'contexts/ResumeContext';
-import type { SideSectionWidgetProps } from 'widgets/SideSectionWidget';
 import SideSectionWidget from 'widgets/SideSectionWidget';
+import type { SideSectionWidgetProps } from 'widgets/SideSectionWidget';
+import type { SectionProps } from 'types/Props';
+import type { ResumeSkill } from 'types/Resume';
 
-export default function SkillsSection() {
-  const { skills = [] } = useContext(ResumeContext);
-
-  const data: SideSectionWidgetProps = {
-    title: 'Skills',
-    items: skills.map(({ name, level, keywords }) => {
+export default function SkillsSection({
+  title,
+  data = [],
+}: SectionProps<ResumeSkill[]>) {
+  const props: SideSectionWidgetProps = {
+    title,
+    items: data.map(({ name, level, keywords }) => {
       return {
         title: name,
         subtitle: level,
@@ -20,5 +21,5 @@ export default function SkillsSection() {
     }),
   };
 
-  return <SideSectionWidget {...data} />;
+  return <SideSectionWidget {...props} />;
 }
