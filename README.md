@@ -29,6 +29,7 @@ This is a CV–themed personal website that uses a [JSON Resume](https://github.
 - React
 - TypeScript
 - Tailwind CSS
+- Font Awesome Icons
 - Parcel
 - Vitest
 
