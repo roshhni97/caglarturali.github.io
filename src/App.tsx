@@ -2,7 +2,6 @@ import { lazy, Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from 'react-error-boundary';
 import { ResumeProvider } from 'contexts/ResumeContext';
-import { MenuProvider } from 'contexts/MenuContext';
 import LoadingView from 'views/LoadingView';
 import ErrorView from 'views/ErrorView';
 
@@ -24,9 +23,7 @@ export function App() {
       <Suspense fallback={<LoadingView />}>
         <QueryClientProvider client={queryClient}>
           <ResumeProvider>
-            <MenuProvider>
-              <CurriculumVitae />
-            </MenuProvider>
+            <CurriculumVitae />
           </ResumeProvider>
         </QueryClientProvider>
       </Suspense>

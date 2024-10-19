@@ -3,7 +3,12 @@ import twConfig from '~/tailwind.config.js';
 
 const BP = Number.parseInt(twConfig.theme.screens.sm);
 
-export default function useMenu() {
+export type MenuState = {
+  isOpen: boolean;
+  toggleOpen: VoidFunction;
+};
+
+export default function useMenu(): MenuState {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {

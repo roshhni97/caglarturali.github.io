@@ -1,9 +1,9 @@
-import { PropsWithChildren, useContext } from 'react';
-import { MenuContext } from 'contexts/MenuContext';
+import { PropsWithChildren } from 'react';
 import MenuWidget from 'widgets/MenuWidget';
 import CVFooter from 'layouts/CVFooter';
 import CVMeta from 'layouts/CVMeta';
 import type { CVMetaProps } from 'layouts/CVMeta';
+import useMenu from 'hooks/useMenu';
 
 export type CVLayoutProps = PropsWithChildren<{
   meta: CVMetaProps;
@@ -12,28 +12,35 @@ export type CVLayoutProps = PropsWithChildren<{
 }>;
 
 export default function CVLayout({ meta, top, left, children }: CVLayoutProps) {
-  const { menuStyle, restStyle } = useContext(MenuContext);
+  const { isOpen, toggleOpen } = useMenu();
+
+  const menuStyle: React.CSSProperties = isOpen
+    ? {
+        display: 'block',
+        paddingTop: '5rem',
+      }
+    : {};
 
   return (
     <>
       <CVMeta {...meta} />
-      <MenuWidget />
+      <MenuWidget isOpen={isOpen} toggleOpen={toggleOpen} />
       <div className="min-h-screen w-full">
         <main className="container mx-auto px-6 pb-60 sm:px-0">
           <div
             className="border-b-2 border-dashed border-gray-400 py-6 sm:py-8"
-            style={restStyle}
+            hidden={isOpen}
           >
             {top}
           </div>
-          <div className="flex flex-col pt-6 sm:flex-row">
+          <div className="flex flex-row pt-6">
             <aside
               className="hidden w-full space-y-8 pe-2 font-light sm:block sm:w-60 sm:text-sm"
               style={menuStyle}
             >
               {left}
             </aside>
-            <div className="w-full space-y-10" style={restStyle}>
+            <div className="w-full space-y-10" hidden={isOpen}>
               {children}
               <CVFooter />
             </div>

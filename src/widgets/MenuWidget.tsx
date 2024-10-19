@@ -1,15 +1,13 @@
-import { useContext } from 'react';
-import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { MenuContext } from 'contexts/MenuContext';
+import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
+import { MenuState } from 'hooks/useMenu';
 
 export const icons = {
   open: faBars,
   close: faClose,
 };
 
-export default function MenuWidget() {
-  const { isOpen, toggleOpen } = useContext(MenuContext);
+export default function MenuWidget({ isOpen, toggleOpen }: MenuState) {
   const icon = isOpen ? icons.close : icons.open;
 
   return (

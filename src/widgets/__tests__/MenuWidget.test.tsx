@@ -1,15 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { act, render, renderHook, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { MenuProvider } from 'contexts/MenuContext';
 import MenuWidget, { icons } from '../MenuWidget';
+import useMenu from 'hooks/useMenu';
 
 describe('<MenuWidget />', () => {
   test('should handle open/close state', async () => {
-    render(
-      <MenuProvider>
-        <MenuWidget />
-      </MenuProvider>,
-    );
+    const { result } = renderHook(useMenu);
+    const { rerender } = render(<MenuWidget {...result.current} />);
 
     const button = screen.getByRole('button');
     const icon = button.querySelector('svg');
@@ -20,11 +17,17 @@ describe('<MenuWidget />', () => {
     expect(icon).toHaveAttribute('data-icon', icons.open.iconName);
 
     // Click to open
-    await userEvent.click(button);
+    await act(async () => {
+      await userEvent.click(button);
+    });
+    rerender(<MenuWidget {...result.current} />);
     expect(icon).toHaveAttribute('data-icon', icons.close.iconName);
 
     // Click to close
-    await userEvent.click(button);
+    await act(async () => {
+      await userEvent.click(button);
+    });
+    rerender(<MenuWidget {...result.current} />);
     expect(icon).toHaveAttribute('data-icon', icons.open.iconName);
   });
 });
