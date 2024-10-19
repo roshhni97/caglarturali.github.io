@@ -3,9 +3,8 @@ export function joinItems(separator: string, ...items: string[]) {
 }
 
 export function summarize(text: string, wordCount: number) {
-  const SEP = ' ';
-  const parts = text.split(SEP);
+  const parts = text.split(' ');
   return parts.length <= wordCount
-    ? parts.join(SEP) + '.'
-    : parts.slice(0, wordCount).join(SEP) + '...';
+    ? text
+    : parts.slice(0, wordCount).join(' ') + '...';
 }
