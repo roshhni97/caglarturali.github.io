@@ -1,47 +1,47 @@
 {
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
-    "name": "Çağlar Turalı",
+    "name": "Roshani Navdiya",
     "label": "Web Developer",
-    "image": "https://avatars.githubusercontent.com/u/23704367?v=4",
-    "email": "caglarturali@pm.me",
+    "image": "https://avatars.githubusercontent.com/u/84122787?v=4&size=64",
+    "email": "roshani.navidya07@gmail.com",
     "phone": "",
-    "url": "https://turali.js.org",
+    "url": "https://roshaninavdiya.tech",
     "summary": "I'm a software developer with a solid mix of self-driven learning and formal training, along with a few years of hands-on professional experience. I've worked on projects in web development, mobile apps, game creation, and VR, with a recent focus on mastering JavaScript and TypeScript. I enjoy diving deep into the core of the languages, beyond just using the latest tools. My approach is grounded in practical coding and finding creative solutions to technical challenges.",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Ankara",
-      "countryCode": "TR",
+      "city": "Gandhinagar",
+      "countryCode": "IN",
       "region": ""
     },
     "profiles": [
       {
         "network": "GitHub",
-        "username": "caglarturali",
-        "url": "https://github.com/caglarturali"
+        "username": "roshhni97",
+        "url": "https://github.com/roshhni97"
       },
       {
         "network": "LinkedIn",
-        "username": "caglarturali",
-        "url": "https://linkedin.com/in/caglarturali"
+        "username": "Roshani Navdiya",
+        "url": "https://www.linkedin.com/in/roshaninavdiya/"
       },
       {
         "network": "FrontendMasters",
-        "username": "caglarturali",
-        "url": "https://frontendmasters.com/u/caglarturali"
+        "username": "Roshh_navdiya",
+        "url": "https://x.com/Roshh_navdiya"
       }
     ]
   },
   "work": [
     {
-      "name": "Metakod",
-      "location": "Ankara, TR",
-      "description": "ERP consultancy company",
-      "position": "Software Developer",
-      "url": "https://metakod.com.tr",
-      "startDate": "2021-03-01",
-      "endDate": "2024-01-01",
+      "name": "Biziverse Pvt. Ltd.",
+      "location": "Gandhinagar, IN",
+      "description": "ERP & CRM Software",
+      "position": "Software Engineer",
+      "url": "https://biziverse.com",
+      "startDate": "2024-06-01",
+      "endDate": "Present",
       "summary": "Metakod is a software consultancy company that specializes in Odoo, an open-source ERP solution.",
       "highlights": [
         "Built custom Odoo modules from the ground up",
