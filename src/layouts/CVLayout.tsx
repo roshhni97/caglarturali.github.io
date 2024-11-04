@@ -1,6 +1,5 @@
 import { PropsWithChildren } from 'react';
 import MenuWidget from 'widgets/MenuWidget';
-import CVFooter from 'layouts/CVFooter';
 import CVMeta from 'layouts/CVMeta';
 import type { CVMetaProps } from 'layouts/CVMeta';
 import useMenu from 'hooks/useMenu';
@@ -42,7 +41,6 @@ export default function CVLayout({ meta, top, left, children }: CVLayoutProps) {
             </aside>
             <div className="w-full space-y-10" hidden={isOpen}>
               {children}
-              <CVFooter />
             </div>
           </div>
         </main>
